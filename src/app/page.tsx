@@ -1,3 +1,3 @@
 export default function IndexPage() {
-  return "Index";
+  return <p className="text-red-500">Hello World</p>;
 }
