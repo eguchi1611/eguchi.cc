@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex h-screen items-center justify-center">
+    <div className="bg-hero flex h-screen items-center justify-center">
       <Image
         alt="ロゴ"
         src="/logo.svg"
