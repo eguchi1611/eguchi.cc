@@ -1,8 +1,8 @@
 import Image from "next/image";
 import LogoBluesky from "./../_assets/mediakit/bluesky.png";
 import LogoGitHub from "./../_assets/mediakit/github.svg";
-import LogoQiita from "./../_assets/mediakit/qiita.png";
-import LogoX from "./../_assets/mediakit/x.png";
+import LogoQiita from "./../_assets/mediakit/qiita.svg";
+import LogoX from "./../_assets/mediakit/x.svg";
 import LogoZenn from "./../_assets/mediakit/zenn.svg";
 import SocialButton from "./SocialButton";
 
