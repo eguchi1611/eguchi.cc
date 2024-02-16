@@ -1,3 +1,4 @@
+import { iconButton } from "@/styles/iconButton";
 import { ReactNode } from "react";
 
 type Props = {
@@ -12,7 +13,7 @@ export default function SocialButton({ href, label, icon }: Props) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 rounded border bg-white px-2 py-1 hover:bg-slate-50"
+      className={iconButton({ color: "light" })}
     >
       {icon}
       {label}

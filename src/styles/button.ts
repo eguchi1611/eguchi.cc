@@ -1,5 +1,10 @@
 import { tv } from "tailwind-variants";
 
-const button = tv({});
-
-export default button;
+export const button = tv({
+  base: "rounded border px-2 py-1 text-center font-semibold",
+  variants: {
+    color: {
+      light: "bg-white",
+    },
+  },
+});
