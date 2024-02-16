@@ -27,7 +27,7 @@ export default function DesktopHeader() {
   const { selected } = useSyncToc(tocIdList);
 
   return (
-    <div className="flex h-full min-w-24 flex-col gap-8 bg-teal-100 px-4 py-8">
+    <div className="flex h-full min-w-24 flex-col gap-8 bg-teal-100 bg-opacity-50 px-4 py-8">
       <div className="flex-1"></div>
       <div>
         {tocItemList.map((item) => (

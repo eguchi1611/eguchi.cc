@@ -6,7 +6,9 @@ export default function useSyncToc(sections: string[]) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        setSelected(entries.find((entry) => entry.isIntersecting)!.target.id);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setSelected(entry.target.id);
+        });
       },
       { root: null, rootMargin: "-50% 0px", threshold: 0 },
     );
