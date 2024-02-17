@@ -16,7 +16,7 @@ export default function Hero() {
         height={21.26}
         className="h-auto w-96"
       />
-      <div className="flex items-start justify-center gap-4 justify-self-center">
+      <div className="flex flex-wrap items-start justify-center gap-4 justify-self-center">
         <SocialButton
           href="#"
           label="GitHub"

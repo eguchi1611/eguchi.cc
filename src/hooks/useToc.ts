@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useSyncToc(sections: string[]) {
+export default function useToc(sections: string[]) {
   const [selected, setSelected] = useState<string | null>(null);
 
   useEffect(() => {

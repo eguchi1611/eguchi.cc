@@ -11,7 +11,7 @@ export default function IndexPage() {
       <div className="fixed bottom-0 right-0 top-0 hidden sm:block">
         <DesktopHeader />
       </div>
-      <div id="top">
+      <div id="top" className="px-4">
         <Hero />
       </div>
       <div id="about" className="h-screen">
