@@ -8,14 +8,13 @@ import SocialButton from "./SocialButton";
 
 export default function Hero() {
   return (
-    <div className="grid-col-1 grid h-screen grid-rows-[1fr_auto_1fr] justify-center gap-4">
-      <div></div>
+    <div className="flex h-screen flex-col items-center justify-center gap-4">
       <Image
         alt="ロゴ"
         src="/logo.svg"
         width={96.48}
         height={21.26}
-        className="h-auto w-96 justify-self-center"
+        className="h-auto w-96"
       />
       <div className="flex items-start justify-center gap-4 justify-self-center">
         <SocialButton
