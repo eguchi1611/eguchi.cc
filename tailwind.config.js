@@ -10,7 +10,22 @@ const config = {
     extend: {},
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      layout: {
+        radius: {
+          small: "0.125rem",
+          medium: "0.25rem",
+          large: "0.5rem",
+        },
+        borderWidth: {
+          small: "1px",
+          medium: "1px",
+          large: "2px",
+        },
+      },
+    }),
+  ],
 };
 
 export default config;

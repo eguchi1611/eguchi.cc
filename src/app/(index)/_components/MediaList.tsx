@@ -20,8 +20,8 @@ function MediaList() {
       {items.map((item) => (
         <Button
           key={item.label}
-          variant="flat"
-          className="border-1 bg-white px-2"
+          variant="bordered"
+          className="bg-white px-2"
           startContent={
             <Image alt={item.label} src={item.logo} className="h-6 w-auto" />
           }
