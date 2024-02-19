@@ -6,7 +6,7 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode"]
+      "extensions": ["esbenp.prettier-vscode", "bradlc.vscode-tailwindcss"]
     }
   }
 

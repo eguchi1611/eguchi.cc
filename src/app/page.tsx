@@ -1,5 +1,5 @@
 function IndexPage() {
-  return <p>Index page</p>;
+  return <p className="text-orange-500">Index page</p>;
 }
 
 export default IndexPage;
