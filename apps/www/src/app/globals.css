@@ -6,4 +6,11 @@
   html {
     @apply scroll-smooth;
   }
+  body {
+    @apply bg-primary-50;
+  }
+
+  * {
+    @apply transition;
+  }
 }

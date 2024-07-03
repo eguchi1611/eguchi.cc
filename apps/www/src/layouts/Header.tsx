@@ -9,12 +9,12 @@ const items = [
 
 export function Header() {
   return (
-    <div className="flex h-16 bg-primary-500/50 shadow-sm backdrop-blur">
+    <div className="flex h-16 bg-primary-600/70 backdrop-blur">
       <div className="container my-auto px-4">
         <ul className="flex gap-2 p-2">
           {items.map(({ label, Icon, href }) => (
             <li key={label}>
-              <Link href={href} className="flex items-center gap-2">
+              <Link href={href} className="flex items-center gap-2 text-white">
                 <Icon />
               </Link>
             </li>

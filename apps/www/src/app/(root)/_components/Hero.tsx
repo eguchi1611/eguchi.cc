@@ -13,7 +13,7 @@ export function Hero() {
   const { viewportTop } = useOffsetTop(masterRef);
   const { windowSize } = useWindowSize();
 
-  const a =
+  const scroll =
     viewportTop && windowSize
       ? Math.max(
           0,
@@ -24,14 +24,15 @@ export function Hero() {
         )
       : 0;
 
-  console.log(a);
-
   return (
     <div
       ref={masterRef}
       className={`relative grid min-h-svh place-content-center place-items-center bg-primary-50 bg-fixed ${styles["bg-pattern"]}`}
     >
-      <div className="absolute inset-0 bg-primary-700" style={{ opacity: a }} />
+      <div
+        className="absolute inset-0 bg-primary-700 transition-none"
+        style={{ opacity: Math.min(scroll, 0.7) }}
+      />
       <Link href="/" className="z-10">
         <Image
           alt=""
