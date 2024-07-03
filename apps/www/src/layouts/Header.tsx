@@ -9,7 +9,7 @@ const items = [
 
 export function Header() {
   return (
-    <div className="flex h-16 bg-primary-100/50 backdrop-blur">
+    <div className="flex h-16 border-b bg-primary-100/50 backdrop-blur">
       <div className="container my-auto px-4">
         <ul className="flex gap-2 p-2">
           {items.map(({ label, Icon, href }) => (
