@@ -1,5 +1,6 @@
 import { Layout } from "@/layouts/Layout";
 import { SubHeader } from "@/layouts/SubHeader";
+import { Articles } from "./_components/Articles";
 import { Hero } from "./_components/Hero";
 import { Profile } from "./_components/Profile";
 
@@ -12,10 +13,14 @@ export default function IndexPage() {
       <div className="sticky top-16">
         <SubHeader />
       </div>
-      <div className="min-h-screen">a</div>
-      <section id="profile" className="bg-cyan-100">
+      <section id="profile" className="bg-cyan-50">
         <div className={styles.section}>
           <Profile />
+        </div>
+      </section>
+      <section id="articles" className="bg-yellow-50">
+        <div className={styles.section}>
+          <Articles />
         </div>
       </section>
       <div className="min-h-screen">a</div>

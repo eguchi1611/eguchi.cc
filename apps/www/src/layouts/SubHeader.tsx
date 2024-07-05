@@ -1,7 +1,7 @@
 const items = [
   { label: "HOME", href: "#" },
   { label: "Profile", href: "#profile" },
-  { label: "ABOUT", href: "#" },
+  { label: "Articles", href: "#articles" },
   { label: "CONTACT", href: "#" },
 ];
 
