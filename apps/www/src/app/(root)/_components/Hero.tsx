@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "./Hero.module.css";
 import { useOffsetTop } from "@/hooks/useOffsetTop";
-import { useRef } from "react";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { minmax } from "@/lib/utils";
-import { IconChevronDown } from "@tabler/icons-react";
+import { IconChevronsDown } from "@tabler/icons-react";
+import { useRef } from "react";
+import styles from "./Hero.module.css";
 
 export function Hero() {
   const masterRef = useRef(null);
@@ -37,7 +37,7 @@ export function Hero() {
         />
       </Link>
       <a href="#profile" className="absolute bottom-0 animate-bounce p-8">
-        <IconChevronDown size={32} className="text-primary-500" />
+        <IconChevronsDown size={32} className="text-primary-500" />
       </a>
     </div>
   );
