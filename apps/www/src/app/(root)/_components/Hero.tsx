@@ -7,22 +7,15 @@ import styles from "./Hero.module.css";
 import { useOffsetTop } from "@/hooks/useOffsetTop";
 import { useRef } from "react";
 import { useWindowSize } from "@/hooks/useWindowSize";
+import { minmax } from "@/lib/utils";
 
 export function Hero() {
   const masterRef = useRef(null);
   const { viewportTop } = useOffsetTop(masterRef);
   const { windowSize } = useWindowSize();
 
-  const scroll =
-    viewportTop && windowSize
-      ? Math.max(
-          0,
-          Math.min(
-            1,
-            1 - (viewportTop + windowSize?.height) / windowSize?.height,
-          ),
-        )
-      : 0;
+  // useMemo使わない方がパフォーマンスが良い
+  const scroll = calcRatio(viewportTop || undefined, windowSize?.height);
 
   return (
     <div
@@ -44,4 +37,14 @@ export function Hero() {
       </Link>
     </div>
   );
+}
+
+/**
+ * 画面の表示比率を計算
+ * @param viewportTop 要素の位置
+ * @param windowHeight ウィンドウの高さ
+ * @returns 画面の表示比率
+ */
+function calcRatio(viewportTop = 0, windowHeight = 1): number {
+  return minmax(0, 1 - (viewportTop + windowHeight) / windowHeight, 1);
 }
