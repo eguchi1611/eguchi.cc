@@ -1,7 +1,7 @@
 import { Layout } from "@/layouts/Layout";
 import { SubHeader } from "@/layouts/SubHeader";
 import { Hero } from "./_components/Hero";
-import { Profile } from "./_sections/Profile";
+import { Profile } from "./_components/Profile";
 
 import styles from "./_page.module.css";
 
