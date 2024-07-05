@@ -8,6 +8,7 @@ import { useOffsetTop } from "@/hooks/useOffsetTop";
 import { useRef } from "react";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { minmax } from "@/lib/utils";
+import { IconChevronDown } from "@tabler/icons-react";
 
 export function Hero() {
   const masterRef = useRef(null);
@@ -35,6 +36,9 @@ export function Hero() {
           className="h-16 w-auto"
         />
       </Link>
+      <a href="#profile" className="absolute bottom-0 animate-bounce p-8">
+        <IconChevronDown size={32} className="text-primary-500" />
+      </a>
     </div>
   );
 }
