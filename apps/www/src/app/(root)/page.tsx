@@ -9,7 +9,9 @@ import styles from "./_page.module.css";
 export default function IndexPage() {
   return (
     <Layout>
-      <Hero />
+      <div id="top">
+        <Hero />
+      </div>
       <div className="sticky top-16">
         <SubHeader />
       </div>

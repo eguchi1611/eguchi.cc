@@ -3,7 +3,7 @@ import styles from "./Section.module.css";
 export function Profile() {
   return (
     <div className="px-4">
-      <h2 className={styles.title}>Profile</h2>
+      <h2 className={styles.title}>プロフィール</h2>
       <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
         <div className="flex flex-col items-center justify-center">
           <img
