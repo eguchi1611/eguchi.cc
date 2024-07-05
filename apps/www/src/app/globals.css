@@ -4,10 +4,10 @@
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    @apply scroll-pt-28 scroll-smooth;
   }
   body {
-    @apply bg-primary-50;
+    @apply bg-primary-50 text-gray-700;
   }
 
   * {
