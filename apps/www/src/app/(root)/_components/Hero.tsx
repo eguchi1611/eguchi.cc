@@ -1,13 +1,14 @@
 "use client";
 
+import { IconChevronsDown } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 import { useOffsetTop } from "@/hooks/useOffsetTop";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { minmax } from "@/lib/utils";
-import { IconChevronsDown } from "@tabler/icons-react";
-import { useRef } from "react";
+
 import styles from "./Hero.module.css";
 
 export function Hero() {
