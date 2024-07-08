@@ -2,6 +2,7 @@ import { Layout } from "@/layouts/Layout";
 import { Aboutme } from "./_components/Aboutme";
 import { Hero } from "./_components/Hero";
 import { Sns } from "./_components/Sns";
+import { Posts } from "./_components/Posts";
 
 export default function IndexPage() {
   return (
@@ -10,7 +11,7 @@ export default function IndexPage() {
         <div id="top">
           <Hero />
         </div>
-        <div className="container grid gap-4 px-2 lg:grid-cols-4 lg:[grid-auto-rows:theme('height.48')]">
+        <div className="container grid gap-4 px-2 lg:grid-cols-4 lg:[grid-auto-rows:theme('height.32')]">
           <div id="aboutme" className="box lg:col-span-2 lg:row-span-2">
             <Aboutme />
           </div>
@@ -18,7 +19,7 @@ export default function IndexPage() {
             <Sns />
           </div>
           <div id="posts" className="box lg:col-span-2 lg:row-span-3">
-            posts
+            <Posts />
           </div>
           <div id="works" className="box lg:col-span-2 lg:row-span-2">
             works
