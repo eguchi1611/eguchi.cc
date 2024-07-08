@@ -10,6 +10,8 @@ export function Profile() {
             src="https://via.placeholder.com/200"
             alt="プロフィール写真"
             className="rounded-full"
+            width={200}
+            height={200}
           />
           <h3 className="mt-4 text-xl font-bold">Keita Ito</h3>
           {/* <p className="text-gray-600">肩書なんてない</p> */}
