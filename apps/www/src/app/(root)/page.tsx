@@ -3,6 +3,7 @@ import { Aboutme } from "./_components/Aboutme";
 import { Hero } from "./_components/Hero";
 import { Sns } from "./_components/Sns";
 import { Posts } from "./_components/Posts";
+import { Works } from "./_components/Works";
 
 export default function IndexPage() {
   return (
@@ -22,7 +23,7 @@ export default function IndexPage() {
             <Posts />
           </div>
           <div id="works" className="box lg:col-span-2 lg:row-span-3">
-            works
+            <Works />
           </div>
           <div id="hobby" className="box lg:col-span-3">
             hobby

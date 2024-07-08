@@ -11,7 +11,7 @@ import icon from "../_assets/icon.png";
 export function Aboutme() {
   return (
     <div className="flex h-full flex-col">
-      <h2 className="mb-1 text-center text-xl font-bold text-gray-900">
+      <h2 className="mb-2 text-center text-xl font-bold text-gray-900">
         <a href="#aboutme" className="block">
           About me
         </a>

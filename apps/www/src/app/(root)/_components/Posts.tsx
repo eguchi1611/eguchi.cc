@@ -4,18 +4,18 @@ import zennIcon from "../_assets/zenn-color.svg";
 import Image from "next/image";
 import { IconHeart } from "@tabler/icons-react";
 
-const articles = posts.articles.splice(0, 5);
+const articles = posts.articles.splice(0, 6);
 
 export function Posts() {
   return (
     <div className="flex h-full flex-col">
-      <h2 className="mb-1 text-center text-xl font-bold text-gray-900">
+      <h2 className="mb-2 text-center text-xl font-bold text-gray-900">
         <a href="#posts" className="block">
           Articles
         </a>
       </h2>
       <div className="grid flex-1 divide-y">
-        {articles.splice(0, 5).map((article) => (
+        {articles.map((article) => (
           <a
             key={article.slug}
             href={"https://zenn.dev" + article.path}
