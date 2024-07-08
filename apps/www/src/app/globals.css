@@ -18,6 +18,6 @@
 
 @layer components {
   .box {
-    @apply rounded bg-white p-4 shadow-sm shadow-primary-100;
+    @apply rounded bg-white p-4 shadow-sm;
   }
 }
