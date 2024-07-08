@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <div
       ref={masterRef}
-      className={`relative grid min-h-svh place-content-center place-items-center bg-primary-50 bg-fixed ${styles["bg-pattern"]}`}
+      className={`relative grid min-h-96 place-content-center place-items-center bg-primary-50 bg-fixed ${styles["bg-pattern"]}`}
     >
       <div
         className="absolute inset-0 bg-primary-700 transition-none"
@@ -37,7 +37,7 @@ export function Hero() {
           className="h-16 w-auto"
         />
       </Link>
-      <a href="#profile" className="absolute bottom-0 animate-bounce p-8">
+      <a href="#aboutme" className="absolute bottom-0 animate-bounce p-8">
         <IconChevronsDown size={32} className="text-primary-500" />
       </a>
     </div>
