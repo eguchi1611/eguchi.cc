@@ -1,4 +1,5 @@
 import { Layout } from "@/layouts/Layout";
+import { Aboutme } from "./_components/Aboutme";
 import { Hero } from "./_components/Hero";
 
 export default function IndexPage() {
@@ -10,7 +11,7 @@ export default function IndexPage() {
         </div>
         <div className="container grid gap-4 px-2 sm:grid-cols-4 sm:[grid-auto-rows:theme('height.32')]">
           <div id="aboutme" className="box sm:col-span-2 sm:row-span-2">
-            prof
+            <Aboutme />
           </div>
           <div id="sns" className="box sm:col-span-2">
             sns
