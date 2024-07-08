@@ -83,12 +83,14 @@ export function Sns() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-full w-full flex-col items-center justify-center"
+          className="group flex h-full w-full flex-col items-center justify-center"
         >
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-white">
             {icon}
           </div>
-          <div className="mt-1 font-mono">{label}</div>
+          <div className="mt-1 font-mono text-sm group-hover:underline">
+            {label}
+          </div>
         </a>
       ))}
     </div>
