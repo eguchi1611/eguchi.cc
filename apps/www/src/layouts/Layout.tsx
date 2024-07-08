@@ -1,5 +1,6 @@
 import { PropsWithChildren } from "react";
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 export function Layout({ children }: PropsWithChildren) {
   return (
@@ -8,6 +9,9 @@ export function Layout({ children }: PropsWithChildren) {
         <Header />
       </div>
       {children}
+      <div className="mt-4">
+        <Footer />
+      </div>
     </div>
   );
 }
