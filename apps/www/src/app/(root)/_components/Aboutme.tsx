@@ -16,7 +16,7 @@ export function Aboutme() {
           About me
         </a>
       </h2>
-      <div className="grid flex-1 place-items-center gap-4 sm:grid-cols-2">
+      <div className="grid flex-1 items-center gap-4 lg:grid-cols-2">
         <Image
           src={icon.src}
           alt="Keita Ito"
