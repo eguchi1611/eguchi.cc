@@ -4,7 +4,7 @@ import zennIcon from "../_assets/zenn-color.svg";
 import Image from "next/image";
 import { IconHeart } from "@tabler/icons-react";
 
-const articles = posts.articles.splice(0, 4);
+const articles = posts.articles.splice(0, 5);
 
 export function Posts() {
   return (
