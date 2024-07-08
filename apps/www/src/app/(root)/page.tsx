@@ -10,7 +10,7 @@ export default function IndexPage() {
         <div id="top">
           <Hero />
         </div>
-        <div className="container grid gap-4 px-2 lg:grid-cols-4 lg:[grid-auto-rows:theme('height.32')]">
+        <div className="container grid gap-4 px-2 lg:grid-cols-4 lg:[grid-auto-rows:theme('height.48')]">
           <div id="aboutme" className="box lg:col-span-2 lg:row-span-2">
             <Aboutme />
           </div>
