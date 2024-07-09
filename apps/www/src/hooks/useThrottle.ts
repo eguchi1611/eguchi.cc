@@ -3,20 +3,19 @@ import { useCallback, useRef } from "react";
 /**
  *
  * @param func スロットリングされる関数
- * @param duration スロットリングする間隔 (ms)
  * @returns スロットリングされた関数
  */
-export function useThrottle<T>(func: (args?: T) => void, duration: number) {
+export function useThrottle<T>(func: (args?: T) => void) {
   const scrollingTimer = useRef<NodeJS.Timeout>();
 
   return useCallback(
     (args?: T) => {
       if (scrollingTimer.current) return;
       scrollingTimer.current = setTimeout(() => {
-        func(args);
         scrollingTimer.current = undefined;
-      }, duration);
+        func(args);
+      }, 50);
     },
-    [scrollingTimer, func, duration],
+    [scrollingTimer, func],
   );
 }

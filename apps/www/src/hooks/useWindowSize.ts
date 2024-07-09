@@ -14,7 +14,6 @@ export function useWindowSize() {
       const { innerWidth: width, innerHeight: height } = window;
       setWindowSize({ width, height });
     }, []),
-    10,
   );
 
   useEffect(() => {
