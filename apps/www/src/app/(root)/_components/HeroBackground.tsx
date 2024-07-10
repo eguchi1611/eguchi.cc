@@ -1,3 +1,5 @@
+"use client";
+
 import { useOffsetTop } from "@/hooks/useOffsetTop";
 import { useWindowSize } from "@/hooks/useWindowSize";
 import { minmax } from "@/lib/utils";
