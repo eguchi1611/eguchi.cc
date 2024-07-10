@@ -8,7 +8,7 @@ const items = [
 export function Header() {
   return (
     <div className="container px-2">
-      <div className="box flex h-12 divide-x p-0">
+      <div className="box flex h-12 divide-x rounded-t-none p-0">
         <a href="#top" className="grid place-items-center px-4">
           <IconChevronsUp />
         </a>
