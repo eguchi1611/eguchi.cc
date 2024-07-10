@@ -25,11 +25,17 @@ export default function IndexPage() {
           <div id="works" className="box lg:col-span-2 lg:row-span-3">
             <Works />
           </div>
-          <div id="hobby" className="box lg:col-span-3">
-            hobby
+          <div id="skills" className="box lg:col-span-2 lg:row-span-4">
+            skills
           </div>
-          <div id="c" className="box">
-            (c)
+          <div id="activities" className="box lg:col-span-2 lg:row-span-6">
+            activities
+          </div>
+          <div id="env" className="box lg:col-span-2 lg:row-span-2">
+            env
+          </div>
+          <div id="contact" className="box lg:col-span-2 lg:row-span-2">
+            contact
           </div>
         </div>
       </div>
