@@ -6,6 +6,7 @@ import { Posts } from "./_components/Posts";
 import { Works } from "./_components/Works";
 import { Skills } from "./_components/Skills";
 import { Activities } from "./_components/Activities";
+import { Contact } from "./_components/Contact";
 
 export default function IndexPage() {
   return (
@@ -37,7 +38,7 @@ export default function IndexPage() {
             env
           </div>
           <div id="contact" className="box lg:col-span-4">
-            contact
+            <Contact />
           </div>
         </div>
       </div>
