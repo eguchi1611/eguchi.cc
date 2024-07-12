@@ -7,6 +7,7 @@ export function Environment() {
         </a>
       </h2>
       {/* todo */}
+      編集中
     </div>
   );
 }
