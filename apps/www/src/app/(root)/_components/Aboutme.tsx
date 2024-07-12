@@ -35,7 +35,7 @@ export function Aboutme() {
           </li>
           <li className="flex gap-4">
             <IconCake />
-            <div>2004年7月9日 (20歳)</div>
+            <div>&apos;04 (20)</div>
           </li>
           <li className="flex gap-4">
             <IconMapPin />
@@ -44,7 +44,9 @@ export function Aboutme() {
           <li className="flex gap-4">
             <IconSchool />
             <div>
-              電気通信大学 情報理工学域
+              国立大学法人 電気通信大学
+              <br />
+              I類 情報理工学域
               <br />
               メディア情報学プログラム
             </div>
