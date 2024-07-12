@@ -23,7 +23,7 @@ export default function IndexPage() {
           <div id="sns" className="box lg:col-span-2">
             <Sns />
           </div>
-          <div id="posts" className="box lg:col-span-2 lg:row-span-4">
+          <div id="articles" className="box lg:col-span-2 lg:row-span-4">
             <Posts />
           </div>
           <div id="works" className="box lg:col-span-2 lg:row-span-3">

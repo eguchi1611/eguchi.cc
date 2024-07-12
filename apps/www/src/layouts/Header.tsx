@@ -2,7 +2,8 @@ import { IconChevronsUp } from "@tabler/icons-react";
 
 const items = [
   { label: "Works", href: "#works" },
-  { label: "Posts", href: "#posts" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {

@@ -10,7 +10,7 @@ export function Posts() {
   return (
     <div className="flex h-full flex-col">
       <h2 className="mb-2 text-center text-xl font-bold text-gray-900">
-        <a href="#posts" className="block">
+        <a href="#articles" className="block">
           Articles
         </a>
       </h2>
