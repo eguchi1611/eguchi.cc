@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import { useThrottle } from "./useThrottle";
 
 interface WindowSize {
   width: number;
@@ -9,13 +8,10 @@ interface WindowSize {
 export function useWindowSize() {
   const [windowSize, setWindowSize] = useState<WindowSize | null>(null);
 
-  const handleResize = useThrottle(
-    useCallback(() => {
-      const { innerWidth: width, innerHeight: height } = window;
-      setWindowSize({ width, height });
-    }, []),
-    10,
-  );
+  const handleResize = useCallback(() => {
+    const { innerWidth: width, innerHeight: height } = window;
+    setWindowSize({ width, height });
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);

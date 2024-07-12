@@ -1,25 +1,29 @@
-import { IconHome, IconMessage, IconNotebook } from "@tabler/icons-react";
-import Link from "next/link";
+import { IconChevronsUp } from "@tabler/icons-react";
 
 const items = [
-  { label: "Home", Icon: IconHome, href: "/" },
-  { label: "Articles", Icon: IconNotebook, href: "#" },
-  { label: "Contact", Icon: IconMessage, href: "#" },
+  { label: "Works", href: "#works" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
   return (
-    <div className="flex h-16 bg-primary-600/70 backdrop-blur">
-      <div className="container my-auto px-4">
-        <ul className="flex gap-2 p-2">
-          {items.map(({ label, Icon, href }) => (
-            <li key={label}>
-              <Link href={href} className="flex items-center gap-2 text-white">
-                <Icon />
-              </Link>
-            </li>
+    <div className="container px-2">
+      <div className="box flex h-12 divide-x rounded-t-none p-0">
+        <a href="#top" className="grid place-items-center px-4">
+          <IconChevronsUp />
+        </a>
+        <div className="grid flex-1 auto-cols-fr grid-flow-col divide-x">
+          {items.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="grid place-items-center px-4 text-center"
+            >
+              {item.label}
+            </a>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
