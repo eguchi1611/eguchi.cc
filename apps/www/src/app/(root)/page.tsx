@@ -4,7 +4,7 @@ import { Activities } from "./_components/Activities";
 import { Contact } from "./_components/Contact";
 import { Environment } from "./_components/Environment";
 import { Hero } from "./_components/Hero";
-import { Posts } from "./_components/Articles";
+import { Articles } from "./_components/Articles";
 import { Skills } from "./_components/Skills";
 import { Sns } from "./_components/Sns";
 import { Works } from "./_components/Works";
@@ -24,7 +24,7 @@ export default function IndexPage() {
             <Sns />
           </div>
           <div id="articles" className="box lg:col-span-2 lg:row-span-4">
-            <Posts />
+            <Articles />
           </div>
           <div id="works" className="box lg:col-span-2 lg:row-span-3">
             <Works />

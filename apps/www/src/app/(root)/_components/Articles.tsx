@@ -6,7 +6,7 @@ import { IconHeart } from "@tabler/icons-react";
 
 const articles = posts.articles.splice(0, 6);
 
-export function Posts() {
+export function Articles() {
   return (
     <div className="flex h-full flex-col">
       <h2 className="mb-2 text-center text-xl font-bold text-gray-900">
