@@ -5,6 +5,7 @@ import { Sns } from "./_components/Sns";
 import { Posts } from "./_components/Posts";
 import { Works } from "./_components/Works";
 import { Skills } from "./_components/Skills";
+import { Activities } from "./_components/Activities";
 
 export default function IndexPage() {
   return (
@@ -30,7 +31,7 @@ export default function IndexPage() {
             <Skills />
           </div>
           <div id="activities" className="box lg:col-span-2 lg:row-span-6">
-            activities
+            <Activities />
           </div>
           <div id="env" className="box lg:col-span-2 lg:row-span-2">
             env
