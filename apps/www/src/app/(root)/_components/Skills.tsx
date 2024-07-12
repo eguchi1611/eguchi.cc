@@ -64,6 +64,16 @@ const items = [
     category: "others",
     subtitle: "Git, Docker, Nginx, Apache, Linux, Windows",
   },
+  {
+    title: "NestJS",
+    category: "backend",
+    subtitle: "",
+  },
+  {
+    title: "その他",
+    category: "backend",
+    subtitle: "TypeORM, Express, Swagger, Passport",
+  },
 ];
 
 const sections: {
@@ -73,6 +83,7 @@ const sections: {
 }[] = [
   { key: "cloud", title: "クラウドサービス" },
   { key: "frontend", title: "フロントエンド" },
+  { key: "backend", title: "バックエンド" },
   { key: "api", title: "API" },
   { key: "language", title: "言語系" },
   { key: "others", title: "その他" },
@@ -81,8 +92,8 @@ const sections: {
   items: items.filter(({ category }) => category === row.key),
 }));
 
-const row1 = sections.slice(0, 2);
-const row2 = sections.slice(2, 6);
+const row1 = sections.slice(0, 3);
+const row2 = sections.slice(3, 6);
 
 export function Skills() {
   return (
