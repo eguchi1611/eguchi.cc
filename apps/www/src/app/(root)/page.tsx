@@ -4,7 +4,7 @@ import { Activities } from "./_components/Activities";
 import { Contact } from "./_components/Contact";
 import { Environment } from "./_components/Environment";
 import { Hero } from "./_components/Hero";
-import { Posts } from "./_components/Posts";
+import { Posts } from "./_components/Articles";
 import { Skills } from "./_components/Skills";
 import { Sns } from "./_components/Sns";
 import { Works } from "./_components/Works";
