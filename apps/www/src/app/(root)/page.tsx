@@ -1,12 +1,13 @@
 import { Layout } from "@/layouts/Layout";
 import { Aboutme } from "./_components/Aboutme";
-import { Hero } from "./_components/Hero";
-import { Sns } from "./_components/Sns";
-import { Posts } from "./_components/Posts";
-import { Works } from "./_components/Works";
-import { Skills } from "./_components/Skills";
 import { Activities } from "./_components/Activities";
 import { Contact } from "./_components/Contact";
+import { Environment } from "./_components/Environment";
+import { Hero } from "./_components/Hero";
+import { Posts } from "./_components/Posts";
+import { Skills } from "./_components/Skills";
+import { Sns } from "./_components/Sns";
+import { Works } from "./_components/Works";
 
 export default function IndexPage() {
   return (
@@ -34,8 +35,8 @@ export default function IndexPage() {
           <div id="activities" className="box lg:col-span-2 lg:row-span-6">
             <Activities />
           </div>
-          <div id="env" className="box lg:col-span-2 lg:row-span-2">
-            env
+          <div id="environment" className="box lg:col-span-2 lg:row-span-2">
+            <Environment />
           </div>
           <div id="contact" className="box lg:col-span-4">
             <Contact />
