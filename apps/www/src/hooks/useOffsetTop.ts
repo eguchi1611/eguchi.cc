@@ -1,20 +1,16 @@
 import { RefObject, useCallback, useEffect, useState } from "react";
-import { useThrottle } from "./useThrottle";
 
 export function useOffsetTop(ref: RefObject<HTMLElement>) {
   const [offsetTop, setOffsetTop] = useState<number | null>(null);
   const [viewportTop, setViewportTop] = useState<number | null>(null);
 
-  const handleScroll = useThrottle(
-    useCallback(() => {
-      if (!ref.current) return;
+  const handleScroll = useCallback(() => {
+    if (!ref.current) return;
 
-      const clientRect = ref.current.getBoundingClientRect();
-      setViewportTop(clientRect.top);
-      setOffsetTop(clientRect.top + window.pageYOffset);
-    }, [ref]),
-    10,
-  );
+    const clientRect = ref.current.getBoundingClientRect();
+    setViewportTop(clientRect.top);
+    setOffsetTop(clientRect.top + window.scrollY);
+  }, [ref]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
