@@ -35,7 +35,7 @@ export default function IndexPage() {
           <div id="env" className="box lg:col-span-2 lg:row-span-2">
             env
           </div>
-          <div id="contact" className="box lg:col-span-2 lg:row-span-2">
+          <div id="contact" className="box lg:col-span-4">
             contact
           </div>
         </div>

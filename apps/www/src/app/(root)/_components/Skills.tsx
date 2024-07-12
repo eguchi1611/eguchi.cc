@@ -88,7 +88,7 @@ export function Skills() {
   return (
     <div className="flex h-full flex-col">
       <h2 className="mb-2 text-center text-xl font-bold text-gray-900">
-        <a href="#posts" className="block">
+        <a href="#skills" className="block">
           Skills
         </a>
       </h2>
