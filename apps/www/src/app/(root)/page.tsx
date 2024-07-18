@@ -1,4 +1,3 @@
-import { Layout } from "@/layouts/Layout";
 import { Aboutme } from "./_components/Aboutme";
 import { Activities } from "./_components/Activities";
 import { Contact } from "./_components/Contact";
@@ -8,6 +7,7 @@ import { Articles } from "./_components/Articles";
 import { Skills } from "./_components/Skills";
 import { Sns } from "./_components/Sns";
 import { Works } from "./_components/Works";
+import { Layout } from "./_components/Layout";
 
 export default function IndexPage() {
   return (

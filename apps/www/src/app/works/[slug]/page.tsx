@@ -1,7 +1,7 @@
+import { Metadata } from "next";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { join } from "path";
 import { ComponentProps } from "react";
-import { Metadata } from "next";
 
 import { getSlugs, readTextFile } from "@/lib/articles";
 
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function WorkPage({ params: { slug } }: Props) {
   const source = await readTextFile(baseDir, slug);
-  const { content, frontmatter } = await compileMDX({
+  const { content } = await compileMDX({
     source,
     options: {
       parseFrontmatter: true,
