@@ -10,7 +10,9 @@ export default async function WorkIndexPage() {
   const articles = await Promise.all(
     slugs.map(async (slug) => {
       const source = await readTextFile(baseDir, slug);
-      const { content, frontmatter } = await compileMDX<{ title: string }>({
+      const { content, frontmatter } = await compileMDX<
+        Partial<{ title: string }>
+      >({
         source,
         options: {
           parseFrontmatter: true,
@@ -21,11 +23,12 @@ export default async function WorkIndexPage() {
   );
 
   return (
-    <div className="">
+    <div className="flex flex-col gap-4">
       {articles.map(({ slug, frontmatter }) => (
-        <div key={slug}>
-          <Link href={`/works/${slug}`}>{frontmatter.title || ""}</Link>
-        </div>
+        <Link key={slug} href={`/works/${slug}`} className="flex border">
+          <div className="flex-1">{frontmatter.title || "Notitle"}</div>
+          <div>ss</div>
+        </Link>
       ))}
     </div>
   );
