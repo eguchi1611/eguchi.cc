@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "format": "prettier . --write"
+    "format": "prettier . --write",
+    "prepare": "husky"
   },
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "devDependencies": {
+    "husky": "^9.1.1",
+    "lint-staged": "^15.2.7",
     "prettier": "^3.3.3"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
   }
 }
