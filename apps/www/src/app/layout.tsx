@@ -4,8 +4,8 @@ import "./globals.css";
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="ja" className="scroll-smooth scroll-pt-16">
-      <body className="text-foreground bg-primary-50">{children}</body>
+    <html lang="ja" className="scroll-pt-16 scroll-smooth">
+      <body className="bg-primary-50 text-foreground">{children}</body>
     </html>
   );
 }
