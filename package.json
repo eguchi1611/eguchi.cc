@@ -2,8 +2,14 @@
   "name": "eguchi.cc",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "format": "prettier . --write"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
 }
