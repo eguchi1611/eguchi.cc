@@ -1,19 +1,32 @@
+import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 
-import type { Config } from "tailwindcss";
+import { nextui } from "@nextui-org/react";
 
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "../../node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    container: {
-      center: true,
-    },
     extend: {
       colors: {
         primary: colors.teal,
-        gray: colors.slate,
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  darkMode: "class",
+  plugins: [
+    require("@tailwindcss/typography"),
+    nextui({
+      themes: {
+        light: {
+          colors: {
+            background: colors.teal[50],
+            foreground: colors.slate[700],
+          },
+        },
+      },
+    }),
+  ],
 } satisfies Config;
