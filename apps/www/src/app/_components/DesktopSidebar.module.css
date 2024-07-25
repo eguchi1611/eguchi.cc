@@ -1,0 +1,3 @@
+.button {
+  @apply transition-colors hover:bg-primary-50;
+}
