@@ -17,7 +17,7 @@ export function AboutSection() {
           About
         </a>
       </div>
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row">
         <div className="grid place-items-center">
           <img
             src="/icon.png"

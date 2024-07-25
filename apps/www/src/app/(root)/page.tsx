@@ -3,12 +3,12 @@ import { AboutSection } from "./_components/AboutSection";
 
 export default function IndexPage() {
   return (
-    <div className="bg-main">
-      <div className="container mx-auto flex">
-        <div className="sticky top-0 h-screen w-56 border-r bg-white">
+    <div className="lg:bg-main">
+      <div className="mx-auto flex lg:container">
+        <div className="sticky top-0 hidden h-screen w-56 border-r bg-white lg:block">
           <DesktopSidebar />
         </div>
-        <div className="grid flex-1 grid-cols-2 gap-4 bg-teal-50 p-4">
+        <div className="grid flex-1 grid-cols-1 gap-4 bg-teal-50 p-4 md:grid-cols-2">
           <div className="flex flex-col gap-4">
             <AboutSection />
           </div>
