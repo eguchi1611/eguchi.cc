@@ -2,21 +2,16 @@ import {
   IconCake,
   IconMapPin,
   IconSchool,
-  IconSectionSign,
   IconSignature,
 } from "@tabler/icons-react";
 
 import styles from "./Section.module.css";
+import { SectionTitle } from "./SectionTitle";
 
 export function AboutSection() {
   return (
     <div className={styles.section}>
-      <div className={styles["section-title"]}>
-        <a href="#" className="group flex items-center gap-1">
-          <IconSectionSign className="group-hover:animate-spin" />
-          About
-        </a>
-      </div>
+      <SectionTitle href="#about" label="About" />
       <div className="flex flex-col gap-4 sm:flex-row">
         <div className="grid place-items-center">
           <img
