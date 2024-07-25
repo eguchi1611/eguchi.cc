@@ -1,0 +1,7 @@
+.section {
+  @apply rounded border bg-white p-4;
+}
+
+.section-title {
+  @apply text-xl font-bold;
+}

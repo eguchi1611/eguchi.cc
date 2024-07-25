@@ -36,17 +36,14 @@ export function DesktopSidebar() {
         />
       </Link>
       <div className="flex flex-col">
-        <a href="#" className={classNames(styles.button, "border-y px-4 py-2")}>
+        <a href="#" className={classNames(styles.button, "border-y")}>
           <IconChevronsUp />
         </a>
         {navs.map(({ name, href, icon }) => (
           <a
             key={name}
             href={href}
-            className={classNames(
-              styles.button,
-              "flex items-center gap-2 px-4 py-2",
-            )}
+            className={classNames(styles.button, "flex items-center gap-2")}
           >
             {icon}
             {name}
