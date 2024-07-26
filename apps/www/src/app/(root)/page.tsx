@@ -17,10 +17,10 @@ export default function IndexPage() {
           <div className="flex flex-col gap-4">
             <AboutSection />
             <ActivitiesSection />
-            <SkillsSection />
           </div>
           <div className="flex flex-col gap-4">
             <ArticleSection />
+            <SkillsSection />
             <ContactSection />
           </div>
         </div>
