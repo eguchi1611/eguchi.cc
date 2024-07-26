@@ -4,23 +4,53 @@ import {
   IconChevronsUp,
   IconMessage,
 } from "@tabler/icons-react";
+import classNames from "classnames";
 import Link from "next/link";
 
-import classNames from "classnames";
 import styles from "./DesktopSidebar.module.css";
 
 const items = [
-  { src: "/twitter.svg", alt: "twitter", width: 128, height: 128 },
-  { src: "/bluesky.svg", alt: "bluesky", width: 682.667, height: 682.667 },
-  { src: "/qiita.svg", alt: "qiita", width: 400, height: 400 },
-  { src: "/zenn.svg", alt: "zenn", width: 88.3, height: 88.3 },
-  { src: "/github.svg", alt: "github", width: 128, height: 128 },
+  {
+    href: "https://x.com/keita_ito_",
+    src: "/twitter.svg",
+    alt: "twitter",
+    width: 128,
+    height: 128,
+  },
+  {
+    href: "https://bsky.app/profile/eguchi.cc",
+    src: "/bluesky.svg",
+    alt: "bluesky",
+    width: 682.667,
+    height: 682.667,
+  },
+  {
+    href: "https://qiita.com/eguchi1611",
+    src: "/qiita.svg",
+    alt: "qiita",
+    width: 400,
+    height: 400,
+  },
+  {
+    href: "https://zenn.dev/kk79it",
+    src: "/zenn.svg",
+    alt: "zenn",
+    width: 88.3,
+    height: 88.3,
+  },
+  {
+    href: "https://github.com/eguchi1611",
+    src: "/github.svg",
+    alt: "github",
+    width: 128,
+    height: 128,
+  },
 ] as const;
 
 const navs = [
-  { name: "About", href: "#", icon: <IconAddressBook /> },
-  { name: "Works", href: "#", icon: <IconBooks /> },
-  { name: "Contact", href: "#", icon: <IconMessage /> },
+  { name: "About", href: "#about", icon: <IconAddressBook /> },
+  { name: "Skills", href: "#skills", icon: <IconBooks /> },
+  { name: "Contact", href: "#contact", icon: <IconMessage /> },
 ] as const;
 
 export function DesktopSidebar() {
@@ -36,28 +66,35 @@ export function DesktopSidebar() {
         />
       </Link>
       <div className="flex flex-col">
-        <a href="#" className={classNames(styles.button, "border-y")}>
+        <a
+          href="#top"
+          className={classNames(styles.button, "clickable border-y")}
+        >
           <IconChevronsUp />
         </a>
         {navs.map(({ name, href, icon }) => (
           <a
             key={name}
             href={href}
-            className={classNames(styles.button, "flex items-center gap-2")}
+            className={classNames(
+              styles.button,
+              "clickable flex items-center gap-2",
+            )}
           >
             {icon}
             {name}
           </a>
         ))}
       </div>
-      <div className="mt-auto flex justify-between gap-1 p-4">
+      <div className="mt-auto flex justify-between p-4">
         {items.map(({ alt, ...props }) => (
           <a
             key={alt}
-            className="transition-transform hover:translate-y-1"
-            href="#"
+            className="p-1"
+            href={props.href}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={alt}
           >
             <img {...props} alt={alt} className="h-6 w-auto" />
           </a>

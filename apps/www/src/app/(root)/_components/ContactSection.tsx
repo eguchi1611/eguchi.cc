@@ -8,15 +8,10 @@ export function ContactSection() {
     <div className={styles.section}>
       <SectionTitle href="contact" label="Contact" />
       <div className="flex flex-col">
-        <a
-          className="clickable flex items-center gap-2 px-4 py-3"
-          href="https://x.com/keita_ito_"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="flex items-center gap-2 px-4 py-3">
           <IconMail />
           <div>contact(at)eguchi.cc</div>
-        </a>
+        </div>
         <a
           className="clickable flex items-center gap-2 px-4 py-3"
           href="https://x.com/keita_ito_"

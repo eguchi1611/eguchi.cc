@@ -8,7 +8,7 @@ import { SkillsSection } from "./_components/SkillsSection";
 
 export default function IndexPage() {
   return (
-    <div className="lg:bg-main">
+    <div className="lg:bg-main" id="top">
       <div className="mx-auto flex lg:container">
         <div className="sticky top-0 hidden h-screen w-56 border-r bg-white lg:block">
           <DesktopSidebar />
