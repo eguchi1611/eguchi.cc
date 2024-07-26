@@ -1,4 +1,3 @@
-import { IconMenu2 } from "@tabler/icons-react";
 import Link from "next/link";
 
 export function MobileHeader() {
@@ -14,9 +13,6 @@ export function MobileHeader() {
           aria-label="logo"
         />
       </Link>
-      <button aria-label="menu" className="rounded-lg py-4">
-        <IconMenu2 />
-      </button>
     </header>
   );
 }

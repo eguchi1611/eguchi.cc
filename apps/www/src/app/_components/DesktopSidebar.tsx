@@ -7,45 +7,8 @@ import {
 import classNames from "classnames";
 import Link from "next/link";
 
+import { socials } from "@/constants";
 import styles from "./DesktopSidebar.module.css";
-
-const items = [
-  {
-    href: "https://x.com/keita_ito_",
-    src: "/twitter.svg",
-    alt: "twitter",
-    width: 128,
-    height: 128,
-  },
-  {
-    href: "https://bsky.app/profile/eguchi.cc",
-    src: "/bluesky.svg",
-    alt: "bluesky",
-    width: 682.667,
-    height: 682.667,
-  },
-  {
-    href: "https://qiita.com/eguchi1611",
-    src: "/qiita.svg",
-    alt: "qiita",
-    width: 400,
-    height: 400,
-  },
-  {
-    href: "https://zenn.dev/kk79it",
-    src: "/zenn.svg",
-    alt: "zenn",
-    width: 88.3,
-    height: 88.3,
-  },
-  {
-    href: "https://github.com/eguchi1611",
-    src: "/github.svg",
-    alt: "github",
-    width: 128,
-    height: 128,
-  },
-] as const;
 
 const navs = [
   { name: "About", href: "#about", icon: <IconAddressBook /> },
@@ -87,20 +50,21 @@ export function DesktopSidebar() {
           </a>
         ))}
       </div>
-      <div className="mt-auto flex justify-between p-4">
-        {items.map(({ alt, ...props }) => (
-          <a
-            key={alt}
-            className="p-1"
-            href={props.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={alt}
-          >
-            <img {...props} alt={alt} className="h-6 w-auto" />
-          </a>
+      <ul className="mt-auto flex justify-between p-4">
+        {socials.map(({ alt, ...props }) => (
+          <li key={alt}>
+            <a
+              className="p-1"
+              href={props.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={alt}
+            >
+              <img {...props} alt={alt} className="h-6 w-auto" />
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className="border-t p-4">(c) 2021 Keita Ito</div>
     </nav>
   );
