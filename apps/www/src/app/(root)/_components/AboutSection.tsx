@@ -15,12 +15,15 @@ export function AboutSection() {
       <div className="flex flex-col justify-around gap-4 sm:flex-row">
         <div className="grid shrink-0 place-items-center">
           <img
-            src="/icon.png"
-            alt="logo"
             width="320"
             height="320"
             className="h-auto w-32 rounded-full"
             aria-hidden="true"
+            loading="lazy"
+            fetchPriority="high"
+            alt="logo"
+            srcSet="https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=100 100w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=116 116w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=134 134w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=156 156w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=182 182w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=210 210w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=244 244w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=282 282w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=328 328w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=380 380w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=442 442w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=512 512w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=594 594w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=688 688w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=798 798w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=926 926w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=1074 1074w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=1246 1246w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=1446 1446w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=1678 1678w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=1946 1946w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=2258 2258w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=2618 2618w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=3038 3038w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=3524 3524w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=4088 4088w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=4742 4742w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=5500 5500w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=6380 6380w, https://eguchi-cc.imgix.net/icon.png?auto=format,compress&w=7400 7400w"
+            src="https://eguchi-cc.imgix.net/icon.png?ixembed=1722011240807&auto=format,compress"
           />
         </div>
         <ul className="flex flex-col gap-2">
