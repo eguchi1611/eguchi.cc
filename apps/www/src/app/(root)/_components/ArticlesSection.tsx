@@ -44,56 +44,59 @@ export async function ArticleSection() {
   ].sort((a, b) => b.published_at.getTime() - a.published_at.getTime());
 
   return (
-    <div className={styles.section}>
+    <section className={styles.section}>
       <SectionTitle href="articles" label="Articles" />
-      <div className="divide-y">
+      <ul className="divide-y">
         {articles.slice(0, 6).map((article) => (
-          <a
-            key={article.id}
-            className="clickable flex items-center gap-4 px-4 py-3"
-            href={article.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {
+          <li key={article.id}>
+            <a
+              className="clickable flex items-center gap-4 px-4 py-3"
+              href={article.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {
-                zenn: (
-                  <img
-                    src="/zenn.svg"
-                    alt=""
-                    width="88.3"
-                    height="88.3"
-                    className="h-auto w-6"
-                  />
-                ),
-                qiita: (
-                  <img
-                    src="/qiita.svg"
-                    alt=""
-                    width="400"
-                    height="400"
-                    className="h-auto w-6"
-                  />
-                ),
-              }[article.source]
-            }
-            <div className="flex-1">
-              <div>{article?.title || ""}</div>
-              <div className="flex items-center gap-2 text-sm">
-                <div>
-                  {article.published_at.toLocaleDateString("ja-JP", {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  })}
-                </div>
-                <IconHeart size={16} />
-                <div>{article.likes_count}</div>
+                {
+                  zenn: (
+                    <img
+                      src="/zenn.svg"
+                      alt="zenn"
+                      width="88.3"
+                      height="88.3"
+                      className="h-auto w-6"
+                      aria-hidden="true"
+                    />
+                  ),
+                  qiita: (
+                    <img
+                      src="/qiita.svg"
+                      alt="qiita"
+                      width="400"
+                      height="400"
+                      className="h-auto w-6"
+                      aria-hidden="true"
+                    />
+                  ),
+                }[article.source]
+              }
+              <div className="flex flex-1 flex-col">
+                <h3>{article?.title || ""}</h3>
+                <p className="flex items-center gap-2 text-sm">
+                  <span>
+                    {article.published_at.toLocaleDateString("ja-JP", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </span>
+                  <IconHeart size={16} aria-hidden="true" />
+                  <span>{article.likes_count}</span>
+                </p>
               </div>
-            </div>
-          </a>
+            </a>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }

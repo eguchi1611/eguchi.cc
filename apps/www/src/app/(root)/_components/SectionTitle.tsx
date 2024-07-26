@@ -7,11 +7,11 @@ interface Props {
 
 export function SectionTitle(props: Props) {
   return (
-    <div className="text-xl font-bold" id={props.href}>
+    <h2 className="text-xl font-bold" id={props.href}>
       <a href={`#${props.href}`} className="group flex items-center gap-1">
         <IconSectionSign className="group-hover:animate-ping" />
         {props.label}
       </a>
-    </div>
+    </h2>
   );
 }

@@ -4,56 +4,102 @@ import { SectionTitle } from "./SectionTitle";
 
 const skills = {
   special: [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg",
+    {
+      label: "Amazon Web Services",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    },
+    {
+      label: "Cloudflare",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg",
+    },
+    {
+      label: "Docker",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    },
+    {
+      label: "Firebase",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
+    },
+    {
+      label: "Supabase",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+    },
+    {
+      label: "React",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    },
+    {
+      label: "Vue.js",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+    },
+    {
+      label: "jQuery",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg",
+    },
   ],
   lang: [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+    {
+      label: "TypeScript",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    },
+    {
+      label: "Node.js",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    },
+    {
+      label: "Java",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    },
+    {
+      label: "HTML",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+    },
+    {
+      label: "Ruby",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg",
+    },
+    {
+      label: "C",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
+    },
+    {
+      label: "C#",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+    },
   ],
-} as const;
+};
 
 export function SkillsSection() {
   return (
-    <div className={styles.section}>
+    <section className={styles.section}>
       <SectionTitle href="skills" label="Skills" />
-      <div className="flex flex-wrap gap-4">
-        {skills.special.map((v) => (
-          <div key={v} className="rounded border p-2">
+      <ul className="flex flex-wrap gap-4">
+        {skills.special.map((e) => (
+          <li key={e.label} className="rounded border p-2">
             <img
-              src={v}
-              alt=""
+              src={e.src}
+              alt={e.label}
               width={128}
               height={128}
               className="h-auto w-12"
+              aria-hidden="true"
             />
-          </div>
+          </li>
         ))}
-      </div>
-      <div className="flex flex-wrap gap-4">
-        {skills.lang.map((v) => (
-          <div key={v} className="rounded border p-2">
+      </ul>
+      <ul className="flex flex-wrap gap-4">
+        {skills.lang.map((e) => (
+          <li key={e.label} className="rounded border p-2">
             <img
-              src={v}
-              alt=""
+              src={e.src}
+              alt={e.label}
               width={128}
               height={128}
               className="h-auto w-8"
             />
-          </div>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }

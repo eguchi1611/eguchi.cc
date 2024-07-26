@@ -45,27 +45,33 @@ const items = [
 
 export function ActivitiesSection() {
   return (
-    <div className={styles.section}>
+    <section className={styles.section}>
       <SectionTitle href="activities" label="Activities" />
-      <div className="relative flex flex-col-reverse">
-        <div className="absolute left-28 h-full w-2 bg-slate-100">
+      <ul className="relative flex flex-col-reverse">
+        <div
+          className="absolute left-28 h-full w-2 bg-slate-100"
+          aria-hidden="true"
+        >
           {/* Vertical line */}
         </div>
         {items.map(({ date, title, description }) => (
-          <div key={title} className="flex px-4 py-3">
-            <div className="min-w-28">{date}</div>
-            <div className="flex-1">
-              <div className="relative">
-                <div className="absolute -left-4 h-full w-2 bg-primary-200">
+          <li key={title} className="flex flex-row-reverse px-4 py-3">
+            <div className="flex flex-1 flex-col">
+              <h3 className="relative">
+                <div
+                  className="absolute -left-4 h-full w-2 bg-primary-200"
+                  aria-hidden="true"
+                >
                   {/* Vertical bar (primary color) */}
                 </div>
                 {title}
-              </div>
+              </h3>
               <div className="mt-1 text-sm">{description}</div>
             </div>
-          </div>
+            <div className="min-w-28">{date}</div>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }

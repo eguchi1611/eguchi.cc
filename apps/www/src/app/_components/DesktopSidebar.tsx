@@ -55,7 +55,7 @@ const navs = [
 
 export function DesktopSidebar() {
   return (
-    <div className="flex h-full flex-col">
+    <nav className="flex h-full flex-col">
       <Link href="/" className="p-4">
         <img
           src="/logo.svg"
@@ -63,6 +63,7 @@ export function DesktopSidebar() {
           width="96.48"
           height="21.26"
           className="h-auto w-full"
+          aria-label="logo"
         />
       </Link>
       <div className="flex flex-col">
@@ -70,7 +71,7 @@ export function DesktopSidebar() {
           href="#top"
           className={classNames(styles.button, "clickable border-y")}
         >
-          <IconChevronsUp />
+          <IconChevronsUp aria-label="top" />
         </a>
         {navs.map(({ name, href, icon }) => (
           <a
@@ -101,6 +102,6 @@ export function DesktopSidebar() {
         ))}
       </div>
       <div className="border-t p-4">(c) 2021 Keita Ito</div>
-    </div>
+    </nav>
   );
 }
