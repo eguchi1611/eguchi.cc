@@ -13,3 +13,9 @@
     );
   }
 }
+
+@layer components {
+  .clickable {
+    @apply transition-colors hover:bg-primary-50;
+  }
+}

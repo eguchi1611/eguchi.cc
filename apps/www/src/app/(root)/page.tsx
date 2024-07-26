@@ -2,6 +2,7 @@ import { DesktopSidebar } from "../_components/DesktopSidebar";
 
 import { AboutSection } from "./_components/AboutSection";
 import { ArticleSection } from "./_components/ArticlesSection";
+import { ContactSection } from "./_components/ContactSection";
 
 export default function IndexPage() {
   return (
@@ -13,6 +14,7 @@ export default function IndexPage() {
         <div className="grid flex-1 grid-cols-1 gap-4 bg-teal-50 p-4 md:grid-cols-2">
           <div className="flex flex-col gap-4">
             <AboutSection />
+            <ContactSection />
           </div>
           <div className="flex flex-col gap-4">
             <ArticleSection />
