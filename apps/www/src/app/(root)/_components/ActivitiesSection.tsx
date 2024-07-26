@@ -49,13 +49,16 @@ export function ActivitiesSection() {
       <SectionTitle href="activities" label="Activities" />
       <ul className="relative flex flex-col-reverse">
         <div
-          className="absolute left-28 h-full w-2 bg-slate-100"
+          className="absolute left-0 h-full w-2 bg-slate-100 lg:left-28"
           aria-hidden="true"
         >
           {/* Vertical line */}
         </div>
         {items.map(({ date, title, description }) => (
-          <li key={title} className="flex flex-row-reverse px-4 py-3">
+          <li
+            key={title}
+            className="flex flex-col-reverse px-4 py-3 lg:flex-row-reverse"
+          >
             <div className="flex flex-1 flex-col">
               <h3 className="relative">
                 <div
@@ -68,7 +71,7 @@ export function ActivitiesSection() {
               </h3>
               <div className="mt-1 text-sm">{description}</div>
             </div>
-            <div className="min-w-28">{date}</div>
+            <div className="min-w-28 text-sm lg:text-base">{date}</div>
           </li>
         ))}
       </ul>

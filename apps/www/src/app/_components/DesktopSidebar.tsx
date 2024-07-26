@@ -32,7 +32,7 @@ export function DesktopSidebar() {
       <div className="flex flex-col">
         <a
           href="#top"
-          className={classNames(styles.button, "clickable border-y")}
+          className={classNames(styles.button, "clickable block border-y")}
         >
           <IconChevronsUp aria-label="top" />
         </a>
@@ -54,7 +54,7 @@ export function DesktopSidebar() {
         {socials.map(({ alt, ...props }) => (
           <li key={alt}>
             <a
-              className="p-1"
+              className="block p-1"
               href={props.href}
               target="_blank"
               rel="noopener noreferrer"

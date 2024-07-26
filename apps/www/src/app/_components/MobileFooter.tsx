@@ -7,7 +7,7 @@ export function MobileFooter() {
         {socials.map(({ alt, ...props }) => (
           <li key={alt}>
             <a
-              className="p-1"
+              className="block p-1"
               href={props.href}
               target="_blank"
               rel="noopener noreferrer"
