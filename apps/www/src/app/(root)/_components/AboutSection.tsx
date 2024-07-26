@@ -11,7 +11,7 @@ import { SectionTitle } from "./SectionTitle";
 export function AboutSection() {
   return (
     <div className={styles.section}>
-      <SectionTitle href="#about" label="About" />
+      <SectionTitle href="about" label="About" />
       <div className="flex flex-col gap-4 sm:flex-row">
         <div className="grid place-items-center">
           <img

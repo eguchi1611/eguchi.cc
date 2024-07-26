@@ -5,7 +5,7 @@ import { SectionTitle } from "./SectionTitle";
 export function ArticleSection() {
   return (
     <div className={styles.section}>
-      <SectionTitle href="#articles" label="Articles" />
+      <SectionTitle href="articles" label="Articles" />
       <div className="divide-y">
         {[1, 2, 3, 4, 5].map((v) => (
           <a

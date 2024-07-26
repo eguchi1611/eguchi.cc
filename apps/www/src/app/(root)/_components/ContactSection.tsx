@@ -6,7 +6,7 @@ import styles from "./Section.module.css";
 export function ContactSection() {
   return (
     <div className={styles.section}>
-      <SectionTitle href="#contact" label="Contact" />
+      <SectionTitle href="contact" label="Contact" />
       <div className="flex flex-col">
         <a
           className="clickable flex items-center gap-2 px-4 py-3"
