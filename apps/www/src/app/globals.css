@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .bg-main {
+    background: linear-gradient(
+      90deg,
+      theme("colors.white") 0%,
+      theme("colors.white") 50%,
+      theme("colors.teal.50") 50%,
+      theme("colors.teal.50") 100%
+    );
+  }
+}
+
+@layer components {
+  .clickable {
+    @apply transition-colors hover:bg-primary-50;
+  }
+}
