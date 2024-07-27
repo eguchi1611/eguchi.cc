@@ -17,7 +17,8 @@ provider "aws" {
 }
 
 locals {
-  s3_origin_id = "${var.name}-s3-origin"
+  s3_origin_id                = "${var.name}-s3-origin"
+  cloudfront_distribution_arn = aws_cloudfront_distribution.www.arn
 }
 
 resource "aws_s3_bucket" "www" {
@@ -42,7 +43,7 @@ data "aws_iam_policy_document" "allow_access_from_cloudfront" {
     condition {
       test     = "StringEquals"
       variable = "AWS:SourceArn"
-      values   = [aws_cloudfront_distribution.www.arn]
+      values   = [local.cloudfront_distribution_arn]
     }
   }
 }
@@ -78,7 +79,8 @@ resource "aws_cloudfront_distribution" "www" {
     origin_id                = local.s3_origin_id
   }
 
-  enabled             = true
+  aliases = [var.domain_name]
+  enabled = true
 
   default_cache_behavior {
     cache_policy_id        = aws_cloudfront_cache_policy.www.id
@@ -95,6 +97,7 @@ resource "aws_cloudfront_distribution" "www" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn = var.acm_certificate_arn
+    ssl_support_method  = "sni-only"
   }
 }
