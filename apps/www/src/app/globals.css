@@ -3,21 +3,19 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply scroll-pt-16 scroll-smooth;
-  }
-
-  body {
-    @apply bg-primary-50 text-gray-700;
-  }
-
-  * {
-    @apply transition;
+  .bg-main {
+    background: linear-gradient(
+      90deg,
+      theme("colors.white") 0%,
+      theme("colors.white") 50%,
+      theme("colors.teal.50") 50%,
+      theme("colors.teal.50") 100%
+    );
   }
 }
 
 @layer components {
-  .box {
-    @apply rounded bg-white p-4 shadow-sm;
+  .clickable {
+    @apply transition-colors hover:bg-primary-50;
   }
 }

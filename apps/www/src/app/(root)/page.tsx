@@ -1,44 +1,37 @@
-import { Aboutme } from "./_components/Aboutme";
-import { Activities } from "./_components/Activities";
-import { Articles } from "./_components/Articles";
-import { Contact } from "./_components/Contact";
-import { Environment } from "./_components/Environment";
-import { Hero } from "./_components/Hero";
-import { Skills } from "./_components/Skills";
-import { Sns } from "./_components/Sns";
-import { Works } from "./_components/Works";
+import { DesktopSidebar } from "../_components/DesktopSidebar";
+import { MobileFooter } from "../_components/MobileFooter";
+import { MobileHeader } from "../_components/MobileHeader";
+
+import { AboutSection } from "./_components/AboutSection";
+import { ActivitiesSection } from "./_components/ActivitiesSection";
+import { ArticleSection } from "./_components/ArticlesSection";
+import { ContactSection } from "./_components/ContactSection";
+import { SkillsSection } from "./_components/SkillsSection";
 
 export default function IndexPage() {
   return (
-    <div className="flex flex-col gap-4">
-      <div id="top">
-        <Hero />
+    <div className="lg:bg-main" id="top">
+      <div className="fixed inset-x-0 top-0 z-10 h-16 border-b bg-white lg:hidden">
+        <MobileHeader />
       </div>
-      <div className="container grid gap-4 px-2 lg:grid-cols-4 lg:[grid-auto-rows:theme('height.32')]">
-        <div id="aboutme" className="box lg:col-span-2 lg:row-span-2">
-          <Aboutme />
+      <main className="mx-auto flex pt-16 lg:container lg:pt-0">
+        <div className="sticky top-0 hidden h-screen w-56 border-r bg-white lg:block">
+          <DesktopSidebar />
         </div>
-        <div id="sns" className="box lg:col-span-2">
-          <Sns />
+        <div className="grid flex-1 grid-cols-1 gap-4 bg-teal-50 p-4 md:grid-cols-2">
+          <div className="flex flex-col gap-4">
+            <AboutSection />
+            <ActivitiesSection />
+          </div>
+          <div className="flex flex-col gap-4">
+            <ArticleSection />
+            <SkillsSection />
+            <ContactSection />
+          </div>
         </div>
-        <div id="articles" className="box lg:col-span-2 lg:row-span-4">
-          <Articles />
-        </div>
-        <div id="works" className="box lg:col-span-2 lg:row-span-3">
-          <Works />
-        </div>
-        <div id="skills" className="box lg:col-span-2 lg:row-span-4">
-          <Skills />
-        </div>
-        <div id="activities" className="box lg:col-span-2 lg:row-span-6">
-          <Activities />
-        </div>
-        <div id="environment" className="box lg:col-span-2 lg:row-span-2">
-          <Environment />
-        </div>
-        <div id="contact" className="box lg:col-span-4">
-          <Contact />
-        </div>
+      </main>
+      <div className="mx-auto bg-primary-100 px-4 lg:container lg:hidden">
+        <MobileFooter />
       </div>
     </div>
   );

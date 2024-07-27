@@ -1,19 +1,19 @@
-import colors from "tailwindcss/colors";
-
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    container: {
-      center: true,
-    },
     extend: {
       colors: {
         primary: colors.teal,
-        gray: colors.slate,
+        secondary: colors.blue,
+        foreground: {
+          DEFAULT: colors.slate[700],
+          ...colors.slate,
+        },
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [],
 } satisfies Config;
