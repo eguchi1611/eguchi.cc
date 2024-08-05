@@ -17,6 +17,11 @@ resource "aws_cloudfront_distribution" "www" {
     # origin.origin_idに合わせる
     target_origin_id       = aws_s3_bucket.www.bucket_regional_domain_name
     viewer_protocol_policy = "redirect-to-https"
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.add-index.arn
+    }
   }
 
   # ビューワーのアクセス制限
@@ -31,9 +36,6 @@ resource "aws_cloudfront_distribution" "www" {
     acm_certificate_arn = var.certificate_arn
     ssl_support_method  = "sni-only"
   }
-
-  # 仮
-  default_root_object = "index.html"
 }
 
 # Origin Access Control
@@ -48,4 +50,12 @@ resource "aws_cloudfront_origin_access_control" "www" {
 # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html?icmpid=docs_cf_help_panel#managed-cache-caching-optimized
 data "aws_cloudfront_cache_policy" "CachingOptimized" {
   name = "Managed-CachingOptimized"
+}
+
+# index.htmlを付与
+resource "aws_cloudfront_function" "add-index" {
+  name    = "add-index"
+  runtime = "cloudfront-js-2.0"
+  code    = file("${path.module}/add-index.js")
+  publish = true
 }
