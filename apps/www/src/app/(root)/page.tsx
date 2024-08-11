@@ -14,11 +14,11 @@ export default function IndexPage() {
       <div className="fixed inset-x-0 top-0 z-10 h-16 border-b bg-white lg:hidden">
         <MobileHeader />
       </div>
-      <main className="mx-auto flex pt-16 lg:container lg:pt-0">
+      <div className="mx-auto flex pt-16 lg:container lg:pt-0">
         <div className="sticky top-0 hidden h-screen w-56 border-r bg-white lg:block">
           <DesktopSidebar />
         </div>
-        <div className="grid flex-1 grid-cols-1 gap-4 bg-teal-50 p-4 md:grid-cols-2">
+        <main className="grid flex-1 grid-cols-1 gap-4 bg-teal-50 p-4 md:grid-cols-2">
           <div className="flex flex-col gap-4">
             <AboutSection />
             <ActivitiesSection />
@@ -28,8 +28,8 @@ export default function IndexPage() {
             <SkillsSection />
             <ContactSection />
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
       <div className="mx-auto bg-primary-100 px-4 lg:container lg:hidden">
         <MobileFooter />
       </div>

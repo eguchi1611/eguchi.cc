@@ -29,27 +29,30 @@ export function DesktopSidebar() {
           aria-label="logo"
         />
       </Link>
-      <div className="flex flex-col">
-        <a
-          href="#top"
-          className={classNames(styles.button, "clickable block border-y")}
-        >
-          <IconChevronsUp aria-label="top" />
-        </a>
-        {navs.map(({ name, href, icon }) => (
+      <ul className="flex flex-col">
+        <li>
           <a
-            key={name}
-            href={href}
-            className={classNames(
-              styles.button,
-              "clickable flex items-center gap-2",
-            )}
+            href="#top"
+            className={classNames(styles.button, "clickable block border-y")}
           >
-            {icon}
-            {name}
+            <IconChevronsUp aria-label="top" />
           </a>
+        </li>
+        {navs.map(({ name, href, icon }) => (
+          <li key={name}>
+            <a
+              href={href}
+              className={classNames(
+                styles.button,
+                "clickable flex items-center gap-2",
+              )}
+            >
+              {icon}
+              {name}
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
       <ul className="mt-auto flex justify-between p-4">
         {socials.map(({ alt, ...props }) => (
           <li key={alt}>
