@@ -1,4 +1,4 @@
-import { IconChevronsUp } from "@tabler/icons-react";
+import { IconChevronsUp, IconShare } from "@tabler/icons-react";
 import classNames from "classnames";
 import Link from "next/link";
 
@@ -57,7 +57,10 @@ export function DesktopSidebar() {
           </li>
         ))}
       </ul>
-      <div className="border-t p-4">(c) 2021 Keita Ito</div>
+      <button className="clickable flex items-center gap-2 border-t p-4">
+        <IconShare />
+        <div className="">Share</div>
+      </button>
     </nav>
   );
 }
