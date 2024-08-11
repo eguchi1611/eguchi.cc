@@ -15,7 +15,7 @@ jobs:
       - run: npm -w apps/www run build
       - uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-region: ap-notheast-1
+          aws-region: ${{ secrets.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - run: aws s3 sync apps/www/out ${{ secrets.S3_BUCKET }}
+      - run: aws s3 sync apps/www/out ${{ secrets.S3_BUCKET }} --delete
