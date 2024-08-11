@@ -1,3 +1,5 @@
+import { IconBooks, IconHome } from "@tabler/icons-react";
+
 export const socials = [
   {
     href: "https://x.com/keita_ito_",
@@ -34,4 +36,9 @@ export const socials = [
     width: 128,
     height: 128,
   },
+] as const;
+
+export const navs = [
+  { name: "Home", href: "/", icon: <IconHome /> },
+  { name: "Works", href: "/works", icon: <IconBooks /> },
 ] as const;

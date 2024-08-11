@@ -1,20 +1,9 @@
-import {
-  IconAddressBook,
-  IconBooks,
-  IconChevronsUp,
-  IconMessage,
-} from "@tabler/icons-react";
+import { IconChevronsUp } from "@tabler/icons-react";
 import classNames from "classnames";
 import Link from "next/link";
 
-import { socials } from "@/constants";
+import { navs, socials } from "@/constants";
 import styles from "./DesktopSidebar.module.css";
-
-const navs = [
-  { name: "About", href: "#about", icon: <IconAddressBook /> },
-  { name: "Skills", href: "#skills", icon: <IconBooks /> },
-  { name: "Contact", href: "#contact", icon: <IconMessage /> },
-] as const;
 
 export function DesktopSidebar() {
   return (
