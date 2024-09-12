@@ -1,16 +1,31 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class PortfolioStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    const repository = new cdk.aws_ecr.Repository(this, "Repository", {
+      repositoryName: "portfolio-website",
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      emptyOnDelete: true,
+    });
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'PortfolioQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    const lambdaFunction = new cdk.aws_lambda.DockerImageFunction(this, "Function", {
+      code: cdk.aws_lambda.DockerImageCode.fromEcr(repository, {
+        tagOrDigest: "latest",
+      }),
+    });
+
+    const lambdaFunctionUrl = lambdaFunction.addFunctionUrl({
+      authType: cdk.aws_lambda.FunctionUrlAuthType.NONE,
+    });
+
+    const distribution = new cdk.aws_cloudfront.Distribution(this, "Distribution", {
+      defaultBehavior: {
+        origin: new cdk.aws_cloudfront_origins.FunctionUrlOrigin(lambdaFunctionUrl),
+        viewerProtocolPolicy: cdk.aws_cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+      },
+    });
   }
 }
