@@ -5,6 +5,9 @@ export class PortfolioStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const certificateArn = process.env.CERTIFICATE_ARN as string;
+    const domainName = process.env.DOMAIN_NAME as string;
+
     const repository = new cdk.aws_ecr.Repository(this, "Repository", {
       repositoryName: "portfolio-website",
       removalPolicy: cdk.RemovalPolicy.DESTROY,
@@ -21,11 +24,36 @@ export class PortfolioStack extends cdk.Stack {
       authType: cdk.aws_lambda.FunctionUrlAuthType.NONE,
     });
 
+    const certificate = cdk.aws_certificatemanager.Certificate.fromCertificateArn(this, "Certificate", certificateArn);
+
     const distribution = new cdk.aws_cloudfront.Distribution(this, "Distribution", {
       defaultBehavior: {
         origin: new cdk.aws_cloudfront_origins.FunctionUrlOrigin(lambdaFunctionUrl),
         viewerProtocolPolicy: cdk.aws_cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        cachePolicy: cdk.aws_cloudfront.CachePolicy.CACHING_DISABLED,
+        originRequestPolicy: cdk.aws_cloudfront.OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
       },
+      domainNames: [domainName],
+      certificate: certificate,
     });
+
+    const zone = cdk.aws_route53.HostedZone.fromLookup(this, "Zone", {
+      domainName: domainName,
+    });
+
+    new cdk.aws_route53.ARecord(this, "Record", {
+      zone: zone,
+      target: cdk.aws_route53.RecordTarget.fromAlias(new cdk.aws_route53_targets.CloudFrontTarget(distribution)),
+    });
+
+    const bucket = new cdk.aws_s3.Bucket(this, "Bucket", {});
+    distribution.addBehavior(
+      "/assets/*",
+      cdk.aws_cloudfront_origins.S3BucketOrigin.withOriginAccessControl(bucket, {}),
+      {
+        viewerProtocolPolicy: cdk.aws_cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        cachePolicy: cdk.aws_cloudfront.CachePolicy.CACHING_OPTIMIZED,
+      },
+    );
   }
 }
