@@ -55,5 +55,56 @@ export class PortfolioStack extends cdk.Stack {
         cachePolicy: cdk.aws_cloudfront.CachePolicy.CACHING_OPTIMIZED,
       },
     );
+
+    const role = new cdk.aws_iam.Role(this, "Role", {
+      assumedBy: new cdk.aws_iam.FederatedPrincipal(
+        "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
+        {
+          StringLike: {
+            "token.actions.githubusercontent.com:sub": "repo:eguchi1611/eguchi.cc:*",
+          },
+          StringEquals: {
+            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          },
+        },
+      ),
+      roleName: "portfolio-website-uploader",
+    });
+
+    role.addToPolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["ecr:GetAuthorizationToken"],
+        resources: ["*"],
+      }),
+    );
+    role.addToPolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["ecr:*"],
+        resources: [repository.repositoryArn],
+      }),
+    );
+
+    // role.addToPolicy(
+    //   new cdk.aws_iam.PolicyStatement({
+    //     principals: [
+    //       new cdk.aws_iam.FederatedPrincipal(
+    //         "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
+    //       ),
+    //     ],
+    //     actions: ["sts:AssumeRoleWithWebIdentity"],
+    //     conditions: {
+    //       StringLike: {
+    //         "token.actions.githubusercontent.com:sub": "repo:eguchi1611/eguchi.cc:*",
+    //       },
+    //       StringEquals: {
+    //         "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+    //       },
+    //     },
+    //   }),
+    // );
+
+    new cdk.CfnOutput(this, "UploaderRoleArn", {
+      value: role.roleArn,
+    });
   }
 }
