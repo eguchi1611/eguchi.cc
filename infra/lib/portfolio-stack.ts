@@ -83,25 +83,24 @@ export class PortfolioStack extends cdk.Stack {
         resources: [repository.repositoryArn],
       }),
     );
-
-    // role.addToPolicy(
-    //   new cdk.aws_iam.PolicyStatement({
-    //     principals: [
-    //       new cdk.aws_iam.FederatedPrincipal(
-    //         "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
-    //       ),
-    //     ],
-    //     actions: ["sts:AssumeRoleWithWebIdentity"],
-    //     conditions: {
-    //       StringLike: {
-    //         "token.actions.githubusercontent.com:sub": "repo:eguchi1611/eguchi.cc:*",
-    //       },
-    //       StringEquals: {
-    //         "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-    //       },
-    //     },
-    //   }),
-    // );
+    role.addToPolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["sts:AssumeRoleWithWebIdentity"],
+        principals: [
+          new cdk.aws_iam.FederatedPrincipal(
+            "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
+          ),
+        ],
+        conditions: {
+          StringLike: {
+            "token.actions.githubusercontent.com:sub": "repo:eguchi1611/eguchi.cc:*",
+          },
+          StringEquals: {
+            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          },
+        },
+      }),
+    );
 
     new cdk.CfnOutput(this, "UploaderRoleArn", {
       value: role.roleArn,
