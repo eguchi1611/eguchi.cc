@@ -57,6 +57,18 @@ export class PortfolioStack extends cdk.Stack {
     );
 
     const role = new cdk.aws_iam.Role(this, "Role", {
+      // assumedBy: new cdk.aws_iam.FederatedPrincipal(
+      //   "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
+      //   {
+      //     StringLike: {
+      //       "token.actions.githubusercontent.com:sub": "repo:eguchi1611/eguchi.cc:*",
+      //     },
+      //     StringEquals: {
+      //       "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+      //     },
+      //   },
+      // ),
+      // GitHub OIDC provider
       assumedBy: new cdk.aws_iam.FederatedPrincipal(
         "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
         {
@@ -67,6 +79,7 @@ export class PortfolioStack extends cdk.Stack {
             "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
           },
         },
+        "sts:AssumeRoleWithWebIdentity",
       ),
       roleName: "portfolio-website-uploader",
     });
@@ -83,24 +96,24 @@ export class PortfolioStack extends cdk.Stack {
         resources: [repository.repositoryArn],
       }),
     );
-    role.addToPolicy(
-      new cdk.aws_iam.PolicyStatement({
-        actions: ["sts:AssumeRoleWithWebIdentity"],
-        principals: [
-          new cdk.aws_iam.FederatedPrincipal(
-            "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
-          ),
-        ],
-        conditions: {
-          StringLike: {
-            "token.actions.githubusercontent.com:sub": "repo:eguchi1611/eguchi.cc:*",
-          },
-          StringEquals: {
-            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-          },
-        },
-      }),
-    );
+    // role.addToPolicy(
+    //   new cdk.aws_iam.PolicyStatement({
+    //     actions: ["sts:AssumeRoleWithWebIdentity"],
+    //     principals: [
+    //       new cdk.aws_iam.FederatedPrincipal(
+    //         "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
+    //       ),
+    //     ],
+    //     conditions: {
+    //       StringLike: {
+    //         "token.actions.githubusercontent.com:sub": "repo:eguchi1611/eguchi.cc:*",
+    //       },
+    //       StringEquals: {
+    //         "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+    //       },
+    //     },
+    //   }),
+    // );
 
     new cdk.CfnOutput(this, "UploaderRoleArn", {
       value: role.roleArn,
