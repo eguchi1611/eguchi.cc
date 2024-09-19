@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,macos,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,macos
 
 ### macOS ###
 # General
@@ -193,4 +193,4 @@ dist
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/node,macos,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,macos
