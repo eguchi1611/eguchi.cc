@@ -40,3 +40,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           context: ./website
+  function:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - run: aws lambda update-function-code --function-name ${{ vars.FUNCTION_NAME }} --image-uri ${{ vars.IMAGE_URI }}
