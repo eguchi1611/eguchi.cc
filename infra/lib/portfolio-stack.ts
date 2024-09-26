@@ -105,12 +105,12 @@ export class PortfolioStack extends cdk.Stack {
         resources: [repository.repositoryArn],
       }),
     );
-    // role.addToPolicy(
-    //   new cdk.aws_iam.PolicyStatement({
-    //     actions: ["lambda:UpdateFunctionCode"],
-    //     resources: [lambdaFunction.functionArn],
-    //   }),
-    // );
+    role.addToPolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["lambda:UpdateFunctionCode"],
+        resources: [lambdaFunction.functionArn],
+      }),
+    );
 
     new cdk.CfnOutput(this, "UploaderRoleArn", {
       value: role.roleArn,
