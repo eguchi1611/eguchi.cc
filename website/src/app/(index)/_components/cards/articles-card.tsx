@@ -3,9 +3,9 @@ import { CardBase } from "./card-base";
 import { IconHeart } from "@tabler/icons-react";
 
 async function ArticlesCard() {
-  const articles = [...(await getZennArticles()), ...(await getQiitaArticles())].sort(
-    (a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime(),
-  );
+  const articles = [...(await getZennArticles()), ...(await getQiitaArticles())]
+    .sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime())
+    .slice(0, 5);
 
   return (
     <CardBase title="Articles">
