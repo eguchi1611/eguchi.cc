@@ -1,15 +1,14 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
 
-// GitHub repository
-const git_repo = "eguchi1611/eguchi.cc";
-// ECR repository
-const ecr_repo = "portfolio-website";
-
 export class PortfolioStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    // GitHub repository
+    const git_repo = "eguchi1611/eguchi.cc";
+    // ECR repository
+    const ecr_repo = "portfolio-website";
     // 証明書のARN
     const certificateArn = process.env.CERTIFICATE_ARN as string;
     // ドメイン名
@@ -80,10 +79,10 @@ export class PortfolioStack extends cdk.Stack {
     // IAMロールの作成
     const role = new cdk.aws_iam.Role(this, "Role", {
       assumedBy: new cdk.aws_iam.FederatedPrincipal(
-        "arn:aws:iam::183295441800:oidc-provider/token.actions.githubusercontent.com",
+        `arn:aws:iam::${cdk.Aws.ACCOUNT_ID}:oidc-provider/token.actions.githubusercontent.com`,
         {
           StringLike: {
-            "token.actions.githubusercontent.com:sub": "repo:" + git_repo + ":*",
+            "token.actions.githubusercontent.com:sub": `repo:${git_repo}:*`,
           },
           StringEquals: {
             "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
@@ -104,6 +103,12 @@ export class PortfolioStack extends cdk.Stack {
       new cdk.aws_iam.PolicyStatement({
         actions: ["ecr:*"],
         resources: [repository.repositoryArn],
+      }),
+    );
+    role.addToPolicy(
+      new cdk.aws_iam.PolicyStatement({
+        actions: ["lambda:UpdateFunctionCode"],
+        resources: [lambdaFunction.functionArn],
       }),
     );
 
