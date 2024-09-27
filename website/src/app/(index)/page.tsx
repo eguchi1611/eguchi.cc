@@ -1,15 +1,21 @@
-import ProfileCard from "./_components/cards/profile-card";
+import { ActivitiesCard } from "./_components/cards/activities-card";
+import { ArticlesCard } from "./_components/cards/articles-card";
+import { ContactCard } from "./_components/cards/contact-card";
+import { ProfileCard } from "./_components/cards/profile-card";
+import { SkillsCard } from "./_components/cards/skills-card";
 
 function IndexPage() {
   return (
-    <div className="flex">
-      <div>sidebar</div>
-      <div className="container mx-auto">
-        <h1 className="text-teal-500">Index Page</h1>
-        <p>v1.0.9</p>
+    <>
+      <div className="container mx-auto space-y-4 px-2 pt-4">
         <ProfileCard />
+        <ArticlesCard />
+        <ActivitiesCard />
+        <SkillsCard />
+        <ContactCard />
       </div>
-    </div>
+      <div className="mt-4 bg-teal-100 py-8 text-center">(c) 2021 Keita Ito</div>
+    </>
   );
 }
 

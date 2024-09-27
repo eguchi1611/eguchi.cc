@@ -3,7 +3,6 @@ name: deploy
 on:
   workflow_dispatch:
   push:
-  pull_request:
 
 permissions:
   id-token: write
