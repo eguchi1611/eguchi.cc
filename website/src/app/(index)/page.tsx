@@ -1,6 +1,7 @@
 import { ActivitiesCard } from "./_components/cards/activities-card";
 import { ArticlesCard } from "./_components/cards/articles-card";
 import { ProfileCard } from "./_components/cards/profile-card";
+import { SkillsCard } from "./_components/cards/skills-card";
 
 function IndexPage() {
   return (
@@ -8,6 +9,7 @@ function IndexPage() {
       <ProfileCard />
       <ArticlesCard />
       <ActivitiesCard />
+      <SkillsCard />
     </div>
   );
 }
