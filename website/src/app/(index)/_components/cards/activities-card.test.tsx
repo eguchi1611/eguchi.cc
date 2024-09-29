@@ -1,6 +1,6 @@
-import { ActivitiesCard } from "@/app/(index)/_components/cards/activities-card";
 import { render, screen } from "@testing-library/react";
 import { expect, test } from "vitest";
+import { ActivitiesCard } from "./activities-card";
 
 test("ActivitiesCard", async () => {
   render(<ActivitiesCard />);
