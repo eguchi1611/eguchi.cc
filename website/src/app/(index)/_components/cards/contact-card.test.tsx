@@ -1,8 +1,13 @@
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { expect, test } from "vitest";
 import { ContactCard } from "./contact-card";
 
-test("ContactCard", async () => {
-  render(<ContactCard />);
-  expect(screen.getByText("keitaito (at) keitaito.net")).toBeDefined();
+describe("ContactCard", () => {
+  it("renders a heading", () => {
+    render(<ContactCard />);
+
+    const heading = screen.getByText("keitaito (at) keitaito.net");
+
+    expect(heading).toBeInTheDocument();
+  });
 });
