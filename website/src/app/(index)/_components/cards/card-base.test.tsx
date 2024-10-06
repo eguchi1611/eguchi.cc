@@ -1,8 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import { expect, test } from "vitest";
 import { CardBase } from "./card-base";
 
-test("CardBase", async () => {
-  render(<CardBase title="test-title">Test</CardBase>);
-  expect(screen.getByRole("heading", { level: 2, name: "test-title" })).toBeDefined();
+describe("CardBase", () => {
+  it("renders a heading", () => {
+    render(<CardBase title="test-title" />);
+
+    const heading = screen.getByRole("heading", { level: 2, name: "test-title" });
+
+    expect(heading).toBeInTheDocument();
+  });
 });
