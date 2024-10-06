@@ -13,7 +13,7 @@ function ContactCard() {
         </li>
         <li className="flex">
           <IconBrandX className="flex-shrink-0" />
-          <a href="https://x.com/keita_ito_" target="_blank" rel="noopener noreferrer">
+          <a className="ml-2" href="https://x.com/keita_ito_" target="_blank" rel="noopener noreferrer">
             @keita_ito_
           </a>
         </li>
