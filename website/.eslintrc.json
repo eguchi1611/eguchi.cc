@@ -5,6 +5,7 @@
     "plugin:@typescript-eslint/stylistic",
     "next/core-web-vitals",
     "next/typescript",
+    "plugin:storybook/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
