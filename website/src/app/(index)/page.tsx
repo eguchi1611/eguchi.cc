@@ -1,3 +1,4 @@
+import { activities } from "@/constants";
 import { ActivitiesCard } from "./_components/cards/activities-card";
 import { ArticlesCard } from "./_components/cards/articles-card";
 import { ContactCard } from "./_components/cards/contact-card";
@@ -9,7 +10,7 @@ function IndexPage() {
     <div className="space-y-4">
       <ProfileCard />
       <ArticlesCard />
-      <ActivitiesCard />
+      <ActivitiesCard activities={activities} />
       <SkillsCard />
       <ContactCard />
     </div>
