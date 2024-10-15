@@ -39,3 +39,9 @@ export const activities = [
     description: "MODやBukkitプラグインを作成し配布など",
   },
 ];
+
+// Menu
+export const menu = [
+  { label: "Home", href: "/" },
+  { label: "Works", href: "/works" },
+];

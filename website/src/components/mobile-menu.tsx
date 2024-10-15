@@ -1,3 +1,4 @@
+import { menu } from "@/constants";
 import { CloseButton, Dialog, DialogPanel } from "@headlessui/react";
 import { IconX } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
@@ -7,11 +8,6 @@ interface MobileMenuProps {
   isOpen: boolean;
   handleClose: () => void;
 }
-
-const items = [
-  { label: "Home", href: "/" },
-  { label: "Works", href: "/works" },
-];
 
 export function MobileMenu(props: MobileMenuProps) {
   const { handleClose } = props;
@@ -32,7 +28,7 @@ export function MobileMenu(props: MobileMenuProps) {
           <IconX onClick={props.handleClose} />
         </CloseButton>
         <ul className="grid h-full place-items-center content-center divide-y">
-          {items.map((item) => (
+          {menu.map((item) => (
             <li key={item.label}>
               <button onClick={() => handleClick(item.href)} className="block w-64 px-8 py-2 hover:underline">
                 {item.label}
