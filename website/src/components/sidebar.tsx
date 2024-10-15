@@ -1,10 +1,6 @@
+import { menu } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-
-const items = [
-  { label: "Home", href: "/" },
-  { label: "Works", href: "/works" },
-];
 
 function Sidebar() {
   return (
@@ -16,7 +12,7 @@ function Sidebar() {
         </h1>
       </Link>
       <ul>
-        {items.map((item) => (
+        {menu.map((item) => (
           <li key={item.label}>
             <Link className="block py-2 text-center" href={item.href}>
               {item.label}
