@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import { Layout } from "./_components/base-layout";
+import { BaseLayout } from "./_components/base-layout";
 import { Providers } from "./_components/providers";
 
 import "./globals.css";
@@ -9,7 +9,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="ja">
       <body>
         <Providers>
-          <Layout>{children}</Layout>
+          <BaseLayout>{children}</BaseLayout>
         </Providers>
       </body>
     </html>

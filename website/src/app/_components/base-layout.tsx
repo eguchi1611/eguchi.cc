@@ -1,11 +1,11 @@
 import type { PropsWithChildren } from "react";
 import { Header } from "./header";
 
-export function Layout({ children }: PropsWithChildren) {
+export function BaseLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Header />
-      <main className="max-w-5xl mx-auto px-6">{children}</main>
+      <main className="mx-auto max-w-5xl px-6 pt-6">{children}</main>
     </>
   );
 }
