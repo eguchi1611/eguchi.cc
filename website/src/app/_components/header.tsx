@@ -36,7 +36,14 @@ export function Header() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} isExternal href="#" isIconOnly aria-label="GitHub" variant="light">
+          <Button
+            as={Link}
+            isExternal
+            href="https://github.com/eguchi1611"
+            isIconOnly
+            aria-label="GitHub"
+            variant="light"
+          >
             <IconBrandGithub />
           </Button>
         </NavbarItem>
