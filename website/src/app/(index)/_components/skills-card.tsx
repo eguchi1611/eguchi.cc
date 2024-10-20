@@ -1,5 +1,5 @@
+import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
 import Image from "next/image";
-import { CardBase } from "./card-base";
 
 const skills = {
   special: [
@@ -68,25 +68,29 @@ const skills = {
   ],
 };
 
-function SkillsCard() {
+export function SkillsCard() {
   return (
-    <CardBase title="Skills">
-      <ul className="flex flex-wrap gap-4">
-        {skills.special.map((skill) => (
-          <li key={skill.label} className="rounded border p-2">
-            <Image alt={skill.label} src={skill.src} width={128} height={128} className="h-auto w-12" />
-          </li>
-        ))}
-      </ul>
-      <ul className="mt-4 flex flex-wrap gap-4">
-        {skills.lang.map((skill) => (
-          <li key={skill.label} className="rounded border p-2">
-            <Image alt={skill.label} src={skill.src} width={128} height={128} className="h-auto w-8" />
-          </li>
-        ))}
-      </ul>
-    </CardBase>
+    <Card shadow="sm">
+      <CardHeader>
+        <h2 className="text-lg font-bold">Skills</h2>
+      </CardHeader>
+      <Divider />
+      <CardBody>
+        <ul className="flex flex-wrap gap-4">
+          {skills.special.map((skill) => (
+            <li key={skill.label} className="rounded border p-2">
+              <Image alt={skill.label} src={skill.src} width={128} height={128} className="h-auto w-12" />
+            </li>
+          ))}
+        </ul>
+        <ul className="mt-4 flex flex-wrap gap-4">
+          {skills.lang.map((skill) => (
+            <li key={skill.label} className="rounded border p-2">
+              <Image alt={skill.label} src={skill.src} width={128} height={128} className="h-auto w-8" />
+            </li>
+          ))}
+        </ul>
+      </CardBody>
+    </Card>
   );
 }
-
-export { SkillsCard };

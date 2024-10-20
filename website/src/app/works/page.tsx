@@ -1,5 +1,3 @@
-function WorksPage() {
-  return <div>Works</div>;
+export default function WorksPage() {
+  return "工事中";
 }
-
-export default WorksPage;

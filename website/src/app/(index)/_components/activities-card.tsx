@@ -1,4 +1,5 @@
-// ActivitiesCard
+import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
+
 export const activities = [
   {
     date: "Mar. 2024",
@@ -40,8 +41,28 @@ export const activities = [
   },
 ];
 
-// Menu
-export const menu = [
-  { label: "Home", href: "/" },
-  { label: "Works", href: "/works" },
-];
+export function ActivitiesCard() {
+  return (
+    <Card shadow="sm">
+      <CardHeader>
+        <h2 className="text-lg font-bold">Activities</h2>
+      </CardHeader>
+      <Divider />
+      <CardBody>
+        <ul className="relative space-y-4 before:absolute before:left-24 before:h-full before:border-l-8 before:border-default-100">
+          {activities.map((item) => (
+            <li key={item.title} className="flex items-start">
+              <div className="relative w-28 flex-shrink-0 before:absolute before:left-24 before:h-full before:border-l-8 before:border-primary-200">
+                {item.date}
+              </div>
+              <div>
+                <div>{item.title}</div>
+                <div className="mt-1 text-sm">{item.description}</div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </CardBody>
+    </Card>
+  );
+}
