@@ -1,4 +1,4 @@
-import { ProfileCard } from "./profile-card";
+import { ProfileCard } from "./_components/profile-card";
 
 export default function IndexPage() {
   return (
