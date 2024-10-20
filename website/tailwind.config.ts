@@ -1,11 +1,13 @@
+import { nextui } from "@nextui-org/react";
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
-import { nextui } from "@nextui-org/react";
 
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    colors: {},
+    colors: ({ colors }) => ({
+      gray: colors.slate,
+    }),
     extend: {},
   },
   plugins: [
