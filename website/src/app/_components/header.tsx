@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Link,
@@ -12,10 +14,17 @@ import {
 import { IconBrandGithub } from "@tabler/icons-react";
 import NextImage from "next/image";
 import NextLink from "next/link";
+import { useCallback, useState } from "react";
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLinkClick = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
+
   return (
-    <Navbar maxWidth="xl">
+    <Navbar maxWidth="xl" isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent as="div" justify="start">
         <NavbarBrand>
           <NextLink href="/">
@@ -51,9 +60,21 @@ export function Header() {
       </NavbarContent>
       <NavbarMenu>
         {/* TODO: メニューの実装 */}
-        <NavbarMenuItem>Hello</NavbarMenuItem>
-        <NavbarMenuItem>Hello</NavbarMenuItem>
-        <NavbarMenuItem>Hello</NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link href="/" color="foreground" onPress={handleLinkClick} className="block">
+            Overview
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link href="/works" color="foreground" onPress={handleLinkClick} className="block">
+            Works
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link href="/blog" color="foreground" onPress={handleLinkClick} className="block">
+            Blog
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
