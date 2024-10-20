@@ -15,7 +15,7 @@ import NextLink from "next/link";
 
 export function Header() {
   return (
-    <Navbar maxWidth="lg">
+    <Navbar maxWidth="xl">
       <NavbarContent as="div" justify="start">
         <NavbarBrand>
           <NextLink href="/">
