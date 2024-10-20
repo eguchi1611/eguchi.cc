@@ -1,10 +1,5 @@
 import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
-import {
-  IconCake,
-  IconMapPin,
-  IconSchool,
-  IconSignature,
-} from "@tabler/icons-react";
+import { IconCake, IconMapPin, IconSchool, IconSignature } from "@tabler/icons-react";
 import Image from "next/image";
 
 function ProfileCard() {
@@ -16,13 +11,7 @@ function ProfileCard() {
       <Divider />
       <CardBody>
         <div className="flex flex-col items-center justify-evenly gap-4 md:flex-row">
-          <Image
-            alt="icon"
-            src="/icon.png"
-            width={500}
-            height={500}
-            className="h-32 w-auto min-w-fit rounded-full"
-          />
+          <Image alt="icon" src="/icon.png" width={500} height={500} className="h-32 w-auto min-w-fit rounded-full" />
           <ul className="space-y-2 self-start md:self-center">
             <li className="flex">
               <IconSignature className="flex-shrink-0" />

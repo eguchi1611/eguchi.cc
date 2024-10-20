@@ -19,13 +19,7 @@ export function Header() {
       <NavbarContent as="div" justify="start">
         <NavbarBrand>
           <NextLink href="/">
-            <NextImage
-              alt=""
-              src="/logo.svg"
-              width={317}
-              height={39}
-              className="h-6 w-auto min-w-fit"
-            />
+            <NextImage alt="" src="/logo.svg" width={317} height={39} className="h-6 w-auto min-w-fit" />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -42,14 +36,7 @@ export function Header() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button
-            as={Link}
-            isExternal
-            href="#"
-            isIconOnly
-            aria-label="GitHub"
-            variant="light"
-          >
+          <Button as={Link} isExternal href="#" isIconOnly aria-label="GitHub" variant="light">
             <IconBrandGithub />
           </Button>
         </NavbarItem>
