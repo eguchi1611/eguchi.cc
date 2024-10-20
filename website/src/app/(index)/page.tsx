@@ -1,5 +1,6 @@
 import { ActivitiesCard } from "./_components/activities-card";
 import { ArticlesCard } from "./_components/articles-card";
+import { ContactCard } from "./_components/contact-card";
 import { ProfileCard } from "./_components/profile-card";
 import { SkillsCard } from "./_components/skills-card";
 
@@ -20,6 +21,9 @@ export default function IndexPage() {
         </div>
         <div className="order-4 sm:order-none">
           <SkillsCard />
+        </div>
+        <div className="order-5 sm:order-none">
+          <ContactCard />
         </div>
       </div>
     </div>
