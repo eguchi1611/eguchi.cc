@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
-import { Layout } from "./_components/layout";
+import type { PropsWithChildren } from "react";
+import { Layout } from "./_components/base-layout";
 import { Providers } from "./_components/providers";
 
 import "./globals.css";
