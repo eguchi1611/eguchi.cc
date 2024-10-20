@@ -1,11 +1,11 @@
-import { Button } from "@nextui-org/react";
+import { ProfileCard } from "./profile-card";
 
 export default function IndexPage() {
   return (
-    <div className="text-center">
-      <h1>Index Page</h1>
-      <p>This is the index page.</p>
-      <Button color="primary">Click me</Button>
+    <div className="text-start">
+      <div className="space-y-4">
+        <ProfileCard />
+      </div>
     </div>
   );
 }
