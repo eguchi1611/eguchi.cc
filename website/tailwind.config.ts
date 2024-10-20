@@ -6,6 +6,8 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: ({ colors }) => ({
+      transparent: colors.transparent,
+      current: colors.current,
       gray: colors.slate,
     }),
     extend: {},
