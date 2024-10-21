@@ -24,7 +24,7 @@ export function Header() {
   }, []);
 
   return (
-    <Navbar maxWidth="xl" isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar maxWidth="xl" isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} classNames={{ wrapper: "px-4" }}>
       <NavbarContent as="div" justify="start">
         <NavbarBrand>
           <NextLink href="/">
