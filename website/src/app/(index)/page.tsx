@@ -1,8 +1,15 @@
+import { Metadata } from "next";
 import { ActivitiesCard } from "./_components/activities-card";
 import { ArticlesCard } from "./_components/articles-card";
 import { ContactCard } from "./_components/contact-card";
 import { ProfileCard } from "./_components/profile-card";
 import { SkillsCard } from "./_components/skills-card";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "伊藤 啓太 - Keita Ito",
+  },
+};
 
 export default function IndexPage() {
   return (
