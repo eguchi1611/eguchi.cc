@@ -28,7 +28,7 @@ export function Header() {
       <NavbarContent as="div" justify="start">
         <NavbarBrand>
           <NextLink href="/">
-            <NextImage alt="" src="/logo.svg" width={317} height={39} className="h-6 w-auto min-w-fit" />
+            <NextImage alt="keitaito.net" src="/logo.svg" width={317} height={39} className="h-6 w-auto min-w-fit" />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -56,7 +56,9 @@ export function Header() {
             <IconBrandGithub />
           </Button>
         </NavbarItem>
-        <NavbarMenuToggle className="sm:hidden" />
+        <NavbarItem className="h-full">
+          <NavbarMenuToggle className="sm:hidden" />
+        </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
         {/* TODO: メニューの実装 */}
