@@ -52,11 +52,11 @@ export function ActivitiesCard() {
         <ul className="relative space-y-4 before:absolute before:left-24 before:h-full before:border-l-8 before:border-default-100">
           {activities.map((item) => (
             <li key={item.title} className="flex items-start">
-              <div className="relative w-28 flex-shrink-0 before:absolute before:left-24 before:h-full before:border-l-8 before:border-primary-200">
-                {item.date}
-              </div>
+              <div className="w-28 flex-shrink-0">{item.date}</div>
               <div>
-                <div>{item.title}</div>
+                <div className="relative before:absolute before:-left-4 before:h-full before:border-l-8 before:border-primary-200">
+                  {item.title}
+                </div>
                 <div className="mt-1 text-sm">{item.description}</div>
               </div>
             </li>
