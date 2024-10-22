@@ -7,10 +7,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | keitaito.net",
-    default: "keitaito.net",
+    template: "%s - Keita Ito",
+    default: "Keita Ito",
   },
-  description: "Developer / Engineer",
+  description: "伊藤 啓太 (いとう けいた)のポートフォリオサイト",
   alternates: {
     canonical: "https://keitaito.net",
   },
