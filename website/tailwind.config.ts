@@ -1,6 +1,7 @@
 import { nextui } from "@nextui-org/react";
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
+import typography from "@tailwindcss/typography";
 
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
@@ -34,6 +35,7 @@ export default {
         },
       },
     }),
+    typography,
   ],
   darkMode: "class",
 } satisfies Config;
