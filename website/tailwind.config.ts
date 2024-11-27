@@ -1,6 +1,8 @@
 import { nextui } from "@nextui-org/react";
-import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 import colors from "tailwindcss/colors";
+
+import type { Config } from "tailwindcss";
 
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
@@ -13,6 +15,7 @@ export default {
     extend: {},
   },
   plugins: [
+    typography,
     nextui({
       layout: {
         radius: {
